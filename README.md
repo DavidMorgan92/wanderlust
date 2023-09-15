@@ -91,7 +91,7 @@ It is clear from looking at competitors' websites that they have a very similar 
 
 #### Prioritization Grid
 
-<details>
+<details open>
 <summary><em>Click to expand grid image</em></summary>
 
 ![Prioritization grid](/documentation/images/prioritization-grid.png)
