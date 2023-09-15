@@ -85,11 +85,20 @@ The results are shown as a paged list of cards with a photo, title, rating, pric
 
 Tapping on a result takes the user to a page where they can see more details about the hotel, including local amenities, attractions, and a Google Maps view of the area. From here they can choose to go on to book and pay.
 
-##### Conclusion
+##### Competitor Research Evaluation
 
 It is clear from looking at competitors' websites that they have a very similar design. This leads me to believe that by trial and error the have converged on a similar design, and that this is what users will expect when they are trying various websites to choose a holiday. Therefore it would be wise to imitate this design.
 
 #### Prioritization Grid
+
+<details>
+<summary><em>Click to expand grid image</em></summary>
+
+![Prioritization grid](/documentation/images/prioritization-grid.png)
+
+</details>
+
+<br>
 
 | Number | Opportunity/Problem                                                                   | Importance | Viability/Feasibility |
 | ------ | ------------------------------------------------------------------------------------- | ---------- | --------------------- |
@@ -100,14 +109,33 @@ It is clear from looking at competitors' websites that they have a very similar 
 | 5      | Allow purchasing through the website                                                  | 8          | 4                     |
 |        |                                                                                       | **36**     | **30**                |
 
-<details>
-<summary>Prioritization grid</summary>
+##### 1. Allow user to choose from one of a set of travel packages
 
-![Prioritization grid](/documentation/images/prioritization-grid.png)
+This problem has maximum importance because it is vital to fulfilling the users' and business's goals established above. It is highly feasible because at its most basic it is simply a matter of presenting fixed data.
 
-</details>
+##### 2. Provide a user interface that is similar to what is provided by competitors' websites
 
-<br>
+This problem has high importance because it has been established that our competitors' all have a similar user interface, and therefore users will be expecting this from other websites. There is an option to go with a radically different user interface, so this has been given high but not maximum importance. Feasibility is high because it will be relatively simple to implement thanks to UI frameworks like Bootstrap.
+
+##### 3. Provide a user interface which is a display of a 3D spinning globe with city markers
+
+This problem has a low importance because it will be a radical departure from a standard UI which may throw off a casual user. However, it could also be an interesting feature that will hook a new user. It's feasibility is low because it will require complicated CSS and/or JS to implement, and may have performance implications especially on mobile devices.
+
+##### 4. Provide registration and login functions
+
+This problem has been given medium importance because it is important, though not vital, to fulfill business goal #2 and user goal #2. The ability to have a user account associated with a website through which purchases are made is important to allow a user to track their purchases. Its feasibility is low because it will require careful security considerations, and perhaps an SSL certificate and a database back end.
+
+##### 5. Allow purchasing through the website
+
+This problem has been given high importance because it is vital to fulfil business goal #2 and user goal #2. It has been given low feasibility because it will require careful security considerations, and probably an SSL certificate.
+
+##### Priority Evaluation
+
+It is recommended that the first release should focus on delivering a minimum viable product (MVP) which aims to fulfil business goal #1 and user goal #1, with a view to fulfilling business goal #2 and user goal #2 in a later release. This is due to their need for careful consideration of their security implications. Therefore problems #4 and #5 will be relegated to future releases.
+
+Problems #1 and #2 are vital to fulfilling business goal #1 and user goal #1 and have high feasibility so these will be the focus of the first release.
+
+Problem #3 refers to a radically different UI from our competitors. It is recommended that this be implemented as an optional UI that can be toggle on or off in place of a traditional UI. This will be the lowest priority goal of the MVP, and will only be implemented after problems #1 and #2 have been satisfactorily solved, and with time permitting.
 
 [↑ Back to top](#wanderlust)
 
