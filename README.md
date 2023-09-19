@@ -10,6 +10,9 @@
     - [Competitor Research](#competitor-research)
     - [Prioritization Grid](#prioritization-grid)
   - [Scope](#scope)
+    - [Allow the user to choose from one of a set of travel packages](#allow-the-user-to-choose-from-one-of-a-set-of-travel-packages)
+    - [Provide a user interface that is similar to what is provided by competitors' websites](#provide-a-user-interface-that-is-similar-to-what-is-provided-by-competitors-websites)
+    - [Provide a user interface which is a display of a 3D spinning globe with city markers](#provide-a-user-interface-which-is-a-display-of-3d-spinning-globe-with-city-markers)
   - [Structure](#structure)
   - [Skeleton](#skeleton)
   - [Surface](#surface)
@@ -102,14 +105,14 @@ It is clear from looking at competitors' websites that they have a very similar 
 
 | Number | Opportunity/Problem                                                                   | Importance | Viability/Feasibility |
 | ------ | ------------------------------------------------------------------------------------- | ---------- | --------------------- |
-| 1      | Allow user to choose from one of a set of travel packages                             | 10         | 10                    |
+| 1      | Allow the user to choose from one of a set of travel packages                         | 10         | 10                    |
 | 2      | Provide a user interface that is similar to what is provided by competitors' websites | 8          | 10                    |
 | 3      | Provide a user interface which is a display of a 3D spinning globe with city markers  | 4          | 4                     |
 | 4      | Provide registration and login functions                                              | 6          | 2                     |
 | 5      | Allow purchasing through the website                                                  | 8          | 4                     |
 |        |                                                                                       | **36**     | **30**                |
 
-##### 1. Allow user to choose from one of a set of travel packages
+##### 1. Allow the user to choose from one of a set of travel packages
 
 This problem has maximum importance because it is vital to fulfilling the users' and business's goals established above. It is highly feasible because at its most basic it is simply a matter of presenting fixed data.
 
@@ -135,11 +138,35 @@ It is recommended that the first release should focus on delivering a minimum vi
 
 Problems #1 and #2 are vital to fulfilling business goal #1 and user goal #1 and have high feasibility so these will be the focus of the first release.
 
-Problem #3 refers to a radically different UI from our competitors. It is recommended that this be implemented as an optional UI that can be toggle on or off in place of a traditional UI. This will be the lowest priority goal of the MVP, and will only be implemented after problems #1 and #2 have been satisfactorily solved, and with time permitting.
+Problem #3 refers to a radically different UI from our competitors. It is recommended that this be implemented as an optional UI that can be toggle on or off in place of a traditional UI, thus facilitating A/B testing to determine its acceptability. This will be the lowest priority goal of the MVP, and will only be implemented after problems #1 and #2 have been satisfactorily solved, and with time permitting.
 
 [↑ Back to top](#wanderlust)
 
 ### Scope
+
+The scope plane is about defining requirements based on the goals established on the strategy plane.
+
+#### Allow the user to choose from one of a set of travel packages
+
+##### Data Storage
+
+A mock data store will be used to back the website. It can be initialized from a JSON file. This will avoid the need to build a real back end for the website, allowing development of the front end to continue independently of the back end.
+
+The data store will contain a structured dataset representing the information about the available travel packages such as location, flights, hotels and price.
+
+#### Provide a user interface that is similar to what is provided by competitors' websites
+
+##### Map View
+
+A common feature of our competitors' websites' UIs is that they include a map view of the chosen hotel. [Google Maps API](https://developers.google.com/maps/documentation/javascript) can facilitate this.
+
+##### Local Attractions
+
+A common feature of our competitors' websites' UIs is that they include a list of local attractions. The [Google Places API](https://developers.google.com/maps/documentation/javascript/places) can be used to get information about these places.
+
+#### Provide a user interface which is a display of 3D spinning globe with city markers
+
+[Preliminary testing](https://davidmorgan92.github.io/three-test/) has shown that [three.js](https://threejs.org/) can be leveraged to provide this functionality. Additionally, there are [examples](https://codepen.io/ksenia-k/pen/NWERpmb) to be found on the internet of this kind of functionality being implemented.
 
 [↑ Back to top](#wanderlust)
 
