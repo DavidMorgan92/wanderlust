@@ -14,6 +14,9 @@
     - [Provide a user interface that is similar to what is provided by competitors' websites](#provide-a-user-interface-that-is-similar-to-what-is-provided-by-competitors-websites)
     - [Provide a user interface which is a display of a 3D spinning globe with city markers](#provide-a-user-interface-which-is-a-display-of-3d-spinning-globe-with-city-markers)
   - [Structure](#structure)
+    - [Home Page](#home-page)
+    - [Package List Page](#package-list-page)
+    - [Package Details Page](#package-details-page)
   - [Skeleton](#skeleton)
   - [Surface](#surface)
 - [Technologies Used](#technologies-used)
@@ -171,6 +174,31 @@ A common feature of our competitors' websites' UIs is that they include a list o
 [↑ Back to top](#wanderlust)
 
 ### Structure
+
+The website will utilize a linear narrative navigation for maximum simplicity. From the home page the user will complete a search form which will present a list of matching packages. Or they will select from a list of advertised package types which will take them to the same package list page. When they select a package it will take them to a package details page where they can see all details about the chosen package.
+
+#### Home Page
+
+The home page will have two main elements:
+
+1. A search form which when submitted will take the user to the package list page
+2. A list of advertised package types which will be hinted above the fold
+
+Submission of the form, or tapping an advertised package type will take them to the package list page.
+
+In the design with the 3D spinning globe then each city that has a package will be highlighted on the globe with a circle. Mousing over the circle will reveal a tooltip with the city's name and its number of packages. Clicking on the circle will take the user to the package list page for all packages in that city.
+
+#### Package List Page
+
+The package list page will be a scrollable list of cards. Each card will show a summary of the package's details like price and location.
+
+This page will feature breadcrumbs at the top to allow the user to go back to the home page.
+
+#### Package Details Page
+
+The package details page will provide a space for the user to see all details about the package they have selected.
+
+This page will feature breadcrumbs at the top to allow the user to go back to the package list page or to the home page.
 
 [↑ Back to top](#wanderlust)
 
