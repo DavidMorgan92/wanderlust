@@ -230,6 +230,18 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 ### Skeleton
 
+[Balsamiq Wireframes project file](documentation/wanderlust.bmpr)
+
+<details>
+
+<summary>index.html</summary>
+
+![index.html](documentation/images/wireframes/index.png)
+
+</details>
+
+<br>
+
 [↑ Back to top](#wanderlust)
 
 ### Surface
