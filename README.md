@@ -234,9 +234,17 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 <details>
 
-<summary>index.html</summary>
+<summary>Home Page</summary>
 
-![index.html](documentation/images/wireframes/index.png)
+![Home Page](documentation/images/wireframes/home-page.png)
+
+</details>
+
+<details>
+
+<summary>From Modal</summary>
+
+![From Modal](documentation/images/wireframes/from-modal.png)
 
 </details>
 
@@ -247,13 +255,6 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 ### Surface
 
 [↑ Back to top](#wanderlust)
-
-#### Features
-
-1. Connect to an API.
-2. Display information about different cities that are potential holiday destinations.
-3. Allow users to select/search a city and see a map with relevant attractions, accommodations and restaurants.
-4. Provide results in a manner that is visually appealing and user friendly.
 
 ## Technologies Used
 
