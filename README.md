@@ -159,32 +159,6 @@ The data store will contain a structured dataset representing the information ab
 
 #### Provide a user interface that is similar to what is provided by competitors' websites
 
-##### Search Form Input
-
-The three websites chosen for competitor research all have slightly different ways of inputting data into the search form. I will choose to imitate that provided by Jet2Holidays because it appears easy to use and to implement which is suitable for a minimum viable product.
-
-The inputs are:
-
-1. From
-2. To
-3. Leaving
-4. Nights
-5. Guests
-
-Apart from the Guests input, which can be changed at any time, the inputs must be completed in order; subsequent inputs are disabled until the preceding ones are filled.
-
-The From input is a [combo box](https://en.wikipedia.org/wiki/Combo_box) for the departure airport. Additionally there is a button to show a modal which contains a list of departure airports. This allows choosing multiple options.
-
-The To input is a combo box for either the destination city, country, or hotel name. There is a button to show a modal which contains a list of destinations sorted alphabetically first by country then city.
-
-The Leaving input when clicked shows a modal which contains a date picker that allows a single selection. Not all dates are allowed.
-
-The Nights input is a drop down that allows a simple integer selection. Not all integer values are allowed.
-
-The Guests input shows a modal with with an array of Room cards. There is a button to allow the user to add a Room. Each Room card has an X button to remove it in the corner, as long as there is more than one in the array. Each Room card has a number input for the number of adults (minimum 1) and number of children (total of both must not be more than 8). The total number of people booked must not be more than 19 across all rooms. A phone number is provided to allow customers to make larger group bookings.
-
-Once all these inputs are complete and valid the search button will be enabled.
-
 ##### Map View
 
 A common feature of our competitors' websites' UIs is that they include a map view of the chosen hotel. [Google Maps API](https://developers.google.com/maps/documentation/javascript) can facilitate this.
@@ -213,6 +187,32 @@ The home page will have two main elements:
 Submission of the form, or tapping an advertised package type will take them to the package list page.
 
 In the design with the 3D spinning globe then each city that has a package will be highlighted on the globe with a circle. Mousing over the circle will reveal a tooltip with the city's name and its number of packages. Clicking on the circle will take the user to the package list page for all packages in that city.
+
+##### Search Form Input
+
+The three websites chosen for competitor research all have slightly different ways of inputting data into the search form. I will choose to imitate that provided by Jet2Holidays because it appears easy to use and to implement which is suitable for a minimum viable product.
+
+The inputs are:
+
+1. From
+2. To
+3. Leaving
+4. Nights
+5. Guests
+
+Apart from the Guests input, which can be changed at any time, the inputs must be completed in order; subsequent inputs are disabled until the preceding ones are filled.
+
+The From input is a [combo box](https://en.wikipedia.org/wiki/Combo_box) for the departure airport. Additionally there is a button to show a modal which contains a list of departure airports. This allows choosing multiple options.
+
+The To input is a combo box for either the destination city, country, or hotel name. There is a button to show a modal which contains a list of destinations sorted alphabetically first by country then city.
+
+The Leaving input when clicked shows a modal which contains a date picker that allows a single selection. Not all dates are allowed.
+
+The Nights input is a drop down that allows a simple integer selection. Not all integer values are allowed.
+
+The Guests input shows a modal with with an array of Room cards. There is a button to allow the user to add a Room. Each Room card has an X button to remove it in the corner, as long as there is more than one in the array. Each Room card has a number input for the number of adults (minimum 1) and number of children (total of both must not be more than 8). The total number of people booked must not be more than 19 across all rooms. A phone number is provided to allow customers to make larger group bookings.
+
+Once all these inputs are complete and valid the search button will be enabled.
 
 #### Package List Page
 
