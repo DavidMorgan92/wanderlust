@@ -248,6 +248,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 </details>
 
+<details>
+
+<summary>To Modal</summary>
+
+![To Modal](documentation/images/wireframes/to-modal.png)
+
+</details>
+
 <br>
 
 [↑ Back to top](#wanderlust)
