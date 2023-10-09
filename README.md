@@ -220,6 +220,11 @@ The package list page will be a scrollable list of cards. Each card will show a 
 
 This page will feature breadcrumbs at the top to allow the user to go back to the home page.
 
+There will be a dropdown menu to select sorting options:
+
+1. Price - low to high
+2. Price - high to low
+
 #### Package Details Page
 
 The package details page will provide a space for the user to see all details about the package they have selected.
@@ -261,6 +266,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 <summary>Leaving Modal</summary>
 
 ![Leaving Modal](documentation/images/wireframes/leaving-modal.png)
+
+</details>
+
+<details>
+
+<summary>Package List Page</summary>
+
+![Package List Page](documentation/images/wireframes/package-list-page.png)
 
 </details>
 
