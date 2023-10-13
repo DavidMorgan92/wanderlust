@@ -277,6 +277,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 </details>
 
+<details>
+
+<summary>Package Details Page (Overview tab)</summary>
+
+![Package Details Page (Overview tab)](documentation/images/wireframes/package-details-overview-tab.png)
+
+</details>
+
 <br>
 
 [↑ Back to top](#wanderlust)
