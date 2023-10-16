@@ -293,6 +293,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 </details>
 
+<details>
+
+<summary>Package Details Page (Rooms tab)</summary>
+
+![Package Details Page (Rooms tab)](documentation/images/wireframes/package-details-rooms-tab.png)
+
+</details>
+
 <br>
 
 [↑ Back to top](#wanderlust)
