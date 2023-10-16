@@ -285,6 +285,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 </details>
 
+<details>
+
+<summary>Package Details Page (Facilities tab)</summary>
+
+![Package Details Page (Facilities tab)](documentation/images/wireframes/package-details-facilities-tab.png)
+
+</details>
+
 <br>
 
 [↑ Back to top](#wanderlust)
