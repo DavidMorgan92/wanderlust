@@ -301,6 +301,14 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 </details>
 
+<details>
+
+<summary>Package Details Page (Location tab)</summary>
+
+![Package Details Page (Location tab)](documentation/images/wireframes/package-details-location-tab.png)
+
+</details>
+
 <br>
 
 [↑ Back to top](#wanderlust)
