@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "location": {
+            "city": "London",
+            "country": "United Kingdom"
+        },
+        "departureAirports": [
+            "Belfast (BFS)",
+            "Birmingham (BHX)",
+            "Bristol (BRS)",
+            "East Midlands (EMA)",
+            "Edinburgh (EDI)"
+        ],
+        "arrivalAirports": [
+            "London Stanstead (STN)",
+            "London Heathrow (LHR)"
+        ],
+        "price": 400,
+        "hotel": {
+            "name": "Apex Temple Court Hotel"
+        }
+    }
+]

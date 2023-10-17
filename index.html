@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
+        <!-- Title -->
         <div class="my-5">
             <h1 class="text-center">Wanderlust</h1>
         </div>
 
-        <div class="border rounded mb-3 p-3">
-            <form id="search">
-                <div class="form-floating floating-icon mb-3">
-                    <input type="text" class="form-control" id="from" placeholder="From" readonly>
+        <!-- Search form -->
+        <div id="search-form-container" class="border rounded mb-3 p-3">
+            <form id="search-form">
+                <div class="form-floating search-form-input mb-3">
+                    <input type="text" class="form-control" id="from" placeholder="From">
                     <label for="from">From</label>
                     <i class="bi bi-geo-alt-fill"></i>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#from-modal">See list</a>
                 </div>
-                <div class="form-floating floating-icon mb-3">
-                    <input type="text" class="form-control" id="to" placeholder="To" readonly>
+                <div class="form-floating search-form-input mb-3">
+                    <input type="text" class="form-control" id="to" placeholder="To">
                     <label for="to">To</label>
                     <i class="bi bi-geo-alt-fill"></i>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#to-modal">See list</a>
                 </div>
-                <div class="form-floating floating-icon mb-3">
+                <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="leaving" placeholder="Leaving" readonly>
                     <label for="leaving">Leaving</label>
                     <i class="bi bi-calendar"></i>
                 </div>
-                <div class="form-floating floating-icon mb-3">
+                <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="nights" placeholder="Nights" readonly>
                     <label for="nights">Nights</label>
                     <i class="bi bi-calendar"></i>
                 </div>
-                <div class="form-floating floating-icon mb-3">
+                <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="guests" placeholder="Guests" readonly>
                     <label for="guests">Guests</label>
                     <i class="bi bi-person-fill"></i>
@@ -47,7 +54,10 @@
             </form>
         </div>
 
+        <!-- Popular destinations -->
         <div class="border rounded mb-3 p-3 pb-0">
+            <h2 class="mb-3">Explore stays in popular destinations</h2>
+
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                     <a href="#" class="card text-decoration-none">
@@ -75,7 +85,8 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                     <a href="#" class="card text-decoration-none">
-                        <img src="assets/images/orlando.jpeg" class="card-img-top" alt="Orlando, United States of America">
+                        <img src="assets/images/orlando.jpeg" class="card-img-top"
+                            alt="Orlando, United States of America">
                         <div class="card-footer">
                             <p class="h6">Orlando, United States of America</p>
                         </div>
@@ -101,6 +112,59 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- This modal allows the user to select a list of departure airports -->
+    <div id="from-modal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Choose departure airports</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fst-italic">Pick the airports that are most convenient for you to fly from</p>
+
+                    <!-- This form will be populated with #form-check-template clones -->
+                    <form id="from-modal-form">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This modal is used for showing errors to the user -->
+    <div id="error-modal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">An error occurred</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- This p will show the error message -->
+                    <p id="error-modal-message"></p>
+                    <p>Please refresh the page.</p>
+                </div>
+                <div class="modal-footer">
+                    <!-- This button will refresh the page -->
+                    <button id="error-modal-refresh-button" type="button" class="btn btn-primary">Refresh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for a checkbox in a form -->
+    <div id="form-check-template" class="form-check" hidden>
+        <input class="form-check-input" type="checkbox" id="form-check-template-input">
+        <label class="form-check-label" for="form-check-template-input"></label>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
+
 </html>
