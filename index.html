@@ -20,12 +20,20 @@
 
         <!-- Search form -->
         <div id="search-form-container" class="border rounded mb-3 p-3">
-            <form id="search-form">
+            <!-- Loading spinner -->
+            <div id="spinner-container" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-grow" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            
+            <form id="search-form" hidden>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="text" class="form-control" id="from" placeholder="From">
+                    <input type="text" class="form-control" id="from" placeholder="From" list="from-datalist">
                     <label for="from">From</label>
                     <i class="bi bi-geo-alt-fill"></i>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#from-modal">See list</a>
+                    <datalist id="from-datalist"></datalist>
                 </div>
                 <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="to" placeholder="To">
