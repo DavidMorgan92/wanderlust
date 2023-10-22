@@ -319,6 +319,10 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 ## Technologies Used
 
+### EmailJS
+
+The EmailJS API is used in [assets/js/contact.js](assets/js/contact.js) to send input from the contact form to my email inbox for response.
+
 ## Testing
 
 ## Deployment
