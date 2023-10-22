@@ -18,10 +18,15 @@ $(async function () {
 
     // Setup functionality for the user to input departure airports
     setupFromInput(departureAirports, () => {});
+    
+    // Get list of all destinations organized by country
+    const destinations = getAllDestinations(packages);
+
+    setupToInput(destinations, () => {});
 });
 
 /**
- * Set up the from modal
+ * Set up the from modal and the input box
  * @param {*} departureAirports Array of departure airports
  * @param {*} onAirportsSelected Callback that is called when airports have been selected by the user
  */
@@ -31,20 +36,11 @@ function setupFromInput(departureAirports, onAirportsSelected) {
 
     // For each departure airport
     for (const airport of departureAirports) {
-        // Clone the form check template
-        const checkbox = $("#form-check-template").clone();
-
-        // Make it unhidden and remove its ID
-        checkbox.attr("id", null);
-        checkbox.attr("hidden", false);
-
         // Construct an ID for the input
         const id = "departure-airport-" + ++index;
 
-        // Set the value and text of the input and label,
-        // and set the ID and for attribute of the input and label
-        checkbox.find("input").val(airport).attr("id", id);
-        checkbox.find("label").text(airport).attr("for", id);
+        // Clone the form check template
+        const checkbox = cloneFormCheckTemplate(id, airport, airport);
 
         // Attach it to the from modal form
         $("#from-modal-form").append(checkbox);
@@ -84,6 +80,109 @@ function setupFromInput(departureAirports, onAirportsSelected) {
             onAirportsSelected([selectedAirport]);
         }
     });
+}
+
+/**
+ * Set up the to modal and the input box
+ * @param {*} destinations Array of destinations
+ * @param {*} onDestinationsSelected Callback that is called when destinations have been selected by the user
+ */
+function setupToInput(destinations, onDestinationsSelected) {
+    let index = 0;
+    let firstLetter;
+
+    for (const destination of destinations) {
+        if (firstLetter !== destination.city[0]) {
+            firstLetter = destination.city[0];
+            
+            const header = $(`<h3>${firstLetter.toUpperCase()}</h3>`);
+
+            $("#to-form-a-z-list-pane").append(header);
+        }
+
+        const id = "destination-" + ++index;
+
+        const locationString = formatLocationString(destination);
+        const checkbox = cloneFormCheckTemplate(id, locationString, locationString);
+
+        checkbox.addClass("destination");
+        $("#to-form-a-z-list-pane").append(checkbox);
+
+        const option = $(`<option val="${locationString}">${locationString}</option>`);
+        $("#to-datalist").append(option);
+    }
+
+    $("#to-form-select-all-input").on("click", function () {
+        $(".destination input").prop("checked", $(this).prop("checked"));
+    });
+
+    $("#to-form-clear-all").on("click", function () {
+        $(".destination input").prop("checked", false);
+        $("#to-form-select-all-input").prop("checked", false);
+    });
+
+    $(".destination input").on("click", function () {
+        const allChecked = $(".destination input:not(:checked)").length === 0;
+        $("#to-form-select-all-input").prop("checked", allChecked);
+    });
+
+    // When the to modal is being closed
+    $("#to-modal").on("hide.bs.modal", function () {
+        // Get array of selected destination values
+        const selectedDestinations = $("#to-form-a-z-list-pane input:checked")
+            .map(function () {
+                return $(this).val();
+            })
+            .get();
+
+        // Set the to input to display this list of destinations
+        $("#to").val(selectedDestinations.join(", "));
+
+        // Callback with selected destinations
+        onDestinationsSelected(selectedDestinations);
+    });
+
+    // Ensure only valid choices are made to the free text input
+    $("#to").on("change", function () {
+        // Get the value of the text input
+        const selectedDestination = $(this).val();
+
+        // If selected destination is not in destinations...
+        if (!destinations.some(d => selectedDestination === formatLocationString(d))) {
+            // ...empty the input
+            $("#to").val("");
+        } else {
+            // ...else callback with selected destinations
+            onDestinationsSelected([selectedDestination]);
+        }
+    });
+}
+
+function formatLocationString(location) {
+    return `${location.city} (${location.country})`;
+}
+
+/**
+ * Create a clone of the form check template
+ * @param {string} id ID of the checkbox input
+ * @param {*} value Value of the checkbox input
+ * @param {*} text Text of the checkbox label
+ * @returns Checkbox element
+ */
+function cloneFormCheckTemplate(id, value, text) {
+    // Clone the form check template
+    const checkbox = $("#form-check-template").clone();
+
+    // Make it unhidden and remove its ID
+    checkbox.attr("id", null);
+    checkbox.attr("hidden", false);
+
+    // Set the value and text of the input and label,
+    // and set the ID and for attribute of the input and label
+    checkbox.find("input").val(value).attr("id", id);
+    checkbox.find("label").text(text).attr("for", id);
+
+    return checkbox;
 }
 
 /**
@@ -146,8 +245,29 @@ function distinct(value, index, array) {
  * @returns Array of strings
  */
 function getAllDepartureAirports(packages) {
-    return packages
+    const airports = packages
         .flatMap(p => p.departureAirports)
         .filter(distinct)
         .sort();
+
+    console.log("Departure airports", airports);
+
+    return airports;
+}
+
+/**
+ * Get a list of all cities that have a package organized by country
+ * @param {*} packages Array of packages
+ * @returns List of objects containing country name and list of cities in that country
+ */
+function getAllDestinations(packages) {
+    const destinations = packages
+        .map(p => p.location)
+        .filter((value, index, locations) =>
+            locations.findIndex(l => l.city === value.city && l.country === value.country) === index)
+        .sort((a, b) => a.city.localeCompare(b.city));
+
+    console.log("Destinations", destinations);
+
+    return destinations;
 }

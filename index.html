@@ -26,7 +26,7 @@
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
-            
+
             <form id="search-form" hidden>
                 <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="from" placeholder="From" list="from-datalist">
@@ -36,10 +36,11 @@
                     <datalist id="from-datalist"></datalist>
                 </div>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="text" class="form-control" id="to" placeholder="To">
+                    <input type="text" class="form-control" id="to" placeholder="To" list="to-datalist">
                     <label for="to">To</label>
                     <i class="bi bi-geo-alt-fill"></i>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#to-modal">See list</a>
+                    <datalist id="to-datalist"></datalist>
                 </div>
                 <div class="form-floating search-form-input mb-3">
                     <input type="text" class="form-control" id="leaving" placeholder="Leaving" readonly>
@@ -134,6 +135,62 @@
                     <!-- This form will be populated with #form-check-template clones -->
                     <form id="from-modal-form">
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This modal allows the user to select a list of destination cities -->
+    <div id="to-modal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Choose destinations</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Tabs to sort by area or A-Z list -->
+                    <ul class="nav nav-underline" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link disabled" id="to-form-by-area-tab" data-bs-toggle="tab"
+                                data-bs-target="#to-form-by-area-pane" type="button" role="tab"
+                                aria-controls="to-form-by-area-pane" aria-disabled="true">By area</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link active" id="to-form-a-z-list-tab" data-bs-toggle="tab"
+                                data-bs-target="#to-form-a-z-list-pane" type="button" role="tab"
+                                aria-controls="to-form-a-z-list-pane" aria-selected="true">A-Z list</button>
+                        </li>
+                    </ul>
+
+                    <!-- Select all and clear all buttons -->
+                    <div class="row p-2">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    id="to-form-select-all-input">
+                                <label class="form-check-label" for="to-form-select-all-input">Select
+                                    all</label>
+                            </div>
+                        </div>
+                        <div class="col text-end">
+                            <button id="to-form-clear-all" class="btn btn-link">Clear all</button>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- This form will be populated with #form-check-template clones -->
+                    <div class="tab-content">
+                        <div class="tab-pane" id="to-form-by-area-pane" role="tabpanel"
+                            aria-labelledby="to-form-by-area-tab" tabindex="0">
+                        </div>
+                        <div class="tab-pane active" id="to-form-a-z-list-pane" role="tabpanel"
+                            aria-labelledby="to-form-a-z-list-tab" tabindex="0">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
