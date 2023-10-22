@@ -1,0 +1,29 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "description": "Travel website",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidMorgan92/wanderlust.git"
+  },
+  "author": "David Morgan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidMorgan92/wanderlust/issues"
+  },
+  "homepage": "https://github.com/DavidMorgan92/wanderlust#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jquery": "^3.7.1"
+  },
+  "jest": {
+    "setupFiles": [ "./tests/setup-jest.js" ]
+  }
+}

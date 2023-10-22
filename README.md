@@ -319,11 +319,17 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 ## Technologies Used
 
+### jQuery
+
+JQuery is used in [index.js](assets/js/index.js) to create cloned instances of hidden templates in the DOM. These template are filled with data to provide a mapping of the data to interactive visual elements on the page.
+
 ### EmailJS
 
-The EmailJS API is used in [assets/js/contact.js](assets/js/contact.js) to send input from the contact form to my email inbox for response.
+The EmailJS API is used in [contact.js](assets/js/contact.js) to send input from the contact form to my email inbox for response.
 
 ## Testing
+
+The project makes use of automated testing by using Jest. Run `npm test` to run the tests.
 
 ## Deployment
 

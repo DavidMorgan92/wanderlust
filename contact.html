@@ -26,27 +26,27 @@
 
         <!-- Success alert -->
         <div class="alert alert-success" role="alert" hidden>
-            The email has been sent. We will respond as soon as possible.
+            Your message has been sent. We will respond as soon as possible.
         </div>
 
         <!-- Error alert -->
         <div class="alert alert-danger" role="alert" hidden>
-            Failed to deliver the email. Please refresh the page and try again.
+            Failed to deliver your message. Please refresh the page and try again.
         </div>
 
         <!-- Contact form -->
         <form id="contact-form">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="userName" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="userEmail" required>
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="10" required></textarea>
+                <textarea class="form-control" id="message" rows="10" name="message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
