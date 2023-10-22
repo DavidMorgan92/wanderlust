@@ -326,3 +326,5 @@ The EmailJS API is used in [assets/js/contact.js](assets/js/contact.js) to send 
 ## Testing
 
 ## Deployment
+
+The website is deployed on GitHub Pages at <https://davidmorgan92.github.io/wanderlust/>
