@@ -17,12 +17,13 @@ $(async function () {
     const departureAirports = getAllDepartureAirports(packages);
 
     // Setup functionality for the user to input departure airports
-    setupFromInput(departureAirports, () => {});
-    
+    setupFromInput(departureAirports, () => { });
+
     // Get list of all destinations organized by country
     const destinations = getAllDestinations(packages);
 
-    setupToInput(destinations, () => {});
+    // Setup functionality for the user to input destinations
+    setupToInput(destinations, () => { });
 });
 
 /**
@@ -94,7 +95,7 @@ function setupToInput(destinations, onDestinationsSelected) {
     for (const destination of destinations) {
         if (firstLetter !== destination.city[0]) {
             firstLetter = destination.city[0];
-            
+
             const header = $(`<h3>${firstLetter.toUpperCase()}</h3>`);
 
             $("#to-form-a-z-list-pane").append(header);
@@ -192,8 +193,15 @@ function cloneFormCheckTemplate(id, value, text) {
 async function getPackages() {
     try {
         // Get packages from JSON
-        const response = await fetch("assets/packages.json");
-        const packages = await response.json();
+        const response = await fetch("https://api.jsonbin.io/v3/b/65abd7ec266cfc3fde7ccd45", {
+            headers: {
+                // Public access key for packages JSON
+                "X-Access-Key": "$2a$10$7Mb4NP9X/xmb8E9GI4h.j.wtSi9lOoKfijHJJHSRdUxLbbaAEshUC"
+            }
+        });
+
+        const json = await response.json();
+        const packages = json.record;
 
         // Log data that was loaded
         console.log("Downloaded packages", packages);

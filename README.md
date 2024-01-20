@@ -153,7 +153,7 @@ The scope plane is about defining requirements based on the goals established on
 
 ##### Data Storage
 
-A mock data store will be used to back the website. The fetch API will be used to get data from a JSON file. This will avoid the need to build a real back end for the website, allowing development of the front end to continue independently of the back end.
+A mock data store will be used to back the website. The fetch API will be used to get data from a JSON file. This will avoid the need to build a real back end for the website, allowing development of the front end to continue independently of the back end. A copy of this file is stored [here](documentation/package-holidays.json) for documentation purposes. It will be uploaded and retrieved from [JSONBin.io](https://jsonbin.io/).
 
 The data store will contain a structured dataset representing the information about the available travel packages such as location, flights, hotels and price.
 
