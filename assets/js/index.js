@@ -17,13 +17,13 @@ $(async function () {
     const departureAirports = getAllDepartureAirports(packages);
 
     // Setup functionality for the user to input departure airports
-    setupFromInput(departureAirports, () => { });
+    setupFromInput(departureAirports, onAirportsSelected);
 
     // Get list of all destinations organized by country
     const destinations = getAllDestinations(packages);
 
     // Setup functionality for the user to input destinations
-    setupToInput(destinations, () => { });
+    setupToInput(destinations, onDestinationsSelected);
 });
 
 /**
@@ -72,12 +72,20 @@ function setupFromInput(departureAirports, onAirportsSelected) {
         // Get the value of the text input
         const selectedAirport = $(this).val();
 
+        // Set the from modal's selections to match the free text input
+        $("#from-modal-form input").each(function () {
+            $(this).prop("checked", $(this).val() === selectedAirport);
+        });
+
         // If selected airport is not in departure airports...
         if (!departureAirports.includes(selectedAirport)) {
             // ...empty the input
             $("#from").val("");
+
+            // Callback with empty array of selected airports
+            onAirportsSelected([]);
         } else {
-            // ...else callback with selected airports
+            // ...callback with selected airports
             onAirportsSelected([selectedAirport]);
         }
     });
@@ -89,42 +97,61 @@ function setupFromInput(departureAirports, onAirportsSelected) {
  * @param {*} onDestinationsSelected Callback that is called when destinations have been selected by the user
  */
 function setupToInput(destinations, onDestinationsSelected) {
+    /**
+     * Set's the "select all" checkbox in the choose destinations modal to true or false
+     * depending on whether all destinations are selected or not
+     */
+    function setSelectAllCheck() {
+        const allChecked = $(".destination input:not(:checked)").length === 0;
+        $("#to-form-select-all-input").prop("checked", allChecked);
+    }
+
     let index = 0;
     let firstLetter;
 
+    // For each destination
     for (const destination of destinations) {
+        // If the first letter of this destination's city is different to the last one
         if (firstLetter !== destination.city[0]) {
+            // Store the first letter of this destination's city
             firstLetter = destination.city[0];
 
+            // Create a header for this first letter
             const header = $(`<h3>${firstLetter.toUpperCase()}</h3>`);
-
             $("#to-form-a-z-list-pane").append(header);
         }
 
+        // Create an ID for the destination template
         const id = "destination-" + ++index;
 
+        // Get a string for this location
         const locationString = formatLocationString(destination);
-        const checkbox = cloneFormCheckTemplate(id, locationString, locationString);
 
+        // Add a checkbox for this destination to the to form
+        const checkbox = cloneFormCheckTemplate(id, locationString, locationString);
         checkbox.addClass("destination");
         $("#to-form-a-z-list-pane").append(checkbox);
 
+        // Add an option for this destination to the to input data list
         const option = $(`<option val="${locationString}">${locationString}</option>`);
         $("#to-datalist").append(option);
     }
 
+    // When the select all input is clicked, update the checked property of all check boxes
     $("#to-form-select-all-input").on("click", function () {
         $(".destination input").prop("checked", $(this).prop("checked"));
     });
 
+    // When the clear all button is clicked, update the checked property of all check boxes
     $("#to-form-clear-all").on("click", function () {
         $(".destination input").prop("checked", false);
         $("#to-form-select-all-input").prop("checked", false);
     });
 
+    // When a destination checkbox is clicked
     $(".destination input").on("click", function () {
-        const allChecked = $(".destination input:not(:checked)").length === 0;
-        $("#to-form-select-all-input").prop("checked", allChecked);
+        // Update the state of the select all checkbox
+        setSelectAllCheck();
     });
 
     // When the to modal is being closed
@@ -148,10 +175,20 @@ function setupToInput(destinations, onDestinationsSelected) {
         // Get the value of the text input
         const selectedDestination = $(this).val();
 
+        // Set the to modal's selections to match the free text input
+        $("#to-form-a-z-list-pane input").each(function () {
+            $(this).prop("checked", $(this).val() === selectedDestination);
+        });
+
+        setSelectAllCheck();
+
         // If selected destination is not in destinations...
         if (!destinations.some(d => selectedDestination === formatLocationString(d))) {
             // ...empty the input
             $("#to").val("");
+
+            // Callback with empty array of selected destinations
+            onDestinationsSelected([]);
         } else {
             // ...else callback with selected destinations
             onDestinationsSelected([selectedDestination]);
@@ -159,6 +196,12 @@ function setupToInput(destinations, onDestinationsSelected) {
     });
 }
 
+/**
+ * Format a location object into a string
+ * @param {string} location.city Location's city
+ * @param {string} location.country Location's country
+ * @returns Formatted location string
+ */
 function formatLocationString(location) {
     return `${location.city} (${location.country})`;
 }
@@ -278,4 +321,22 @@ function getAllDestinations(packages) {
     console.log("Destinations", destinations);
 
     return destinations;
+}
+
+/**
+ * Called when the user has chosen a set of departure airports
+ * @param {string[]} selectedAirports User's selected departure airports
+ */
+function onAirportsSelected(selectedAirports) {
+    // Log the user's selection
+    console.log("Selected airports", selectedAirports);
+}
+
+/**
+ * Called when the user has selected a set of destinations
+ * @param {string[]} selectedDestinations User's selected destinations
+ */
+function onDestinationsSelected(selectedDestinations) {
+    // Log the user's selection
+    console.log("Selected destinations", selectedDestinations);
 }
