@@ -5,20 +5,37 @@
             "city": "London",
             "country": "United Kingdom"
         },
-        "departureAirports": [
-            "Belfast (BFS)",
-            "Birmingham (BHX)",
-            "Bristol (BRS)",
-            "East Midlands (EMA)",
-            "Edinburgh (EDI)"
-        ],
-        "arrivalAirports": [
-            "London Stanstead (STN)",
-            "London Heathrow (LHR)"
-        ],
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "Belfast (BFS)",
+                    "time": "2024-02-15T08:10Z"
+                },
+                "arrival": {
+                    "airport": "London Stanstead (STN)",
+                    "time": "2024-02-15T09:50Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "London Stanstead (STN)",
+                    "time": "2024-02-20T15:00Z"
+                },
+                "arrival": {
+                    "airport": "Belfast (BFS)",
+                    "time": "2024-02-20T16:40Z"
+                }
+            }
+        },
         "price": 400,
         "hotel": {
-            "name": "Apex Temple Court Hotel"
+            "name": "Apex Temple Court Hotel",
+            "features": [
+                "Excellent transport links",
+                "Comfortable rooms",
+                "Outdoor pool area",
+                "Gym"
+            ]
         }
     }
 ]

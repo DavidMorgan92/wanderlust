@@ -33,3 +33,7 @@
 #spinner-container {
     height: 408px;
 }
+
+.rotate-icon::before {
+    transform: rotate(90deg);
+}
