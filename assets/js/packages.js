@@ -83,12 +83,12 @@ function clonePackageTemplate(package) {
     template.find(".departing-flight-departure-airport").text(package.flights.departing.departure.airport);
     template.find(".departing-flight-arrival-airport").text(package.flights.departing.arrival.airport);
     template.find(".departing-flight-departure-time").text(new Date(package.flights.departing.departure.time).toLocaleDateString("en-GB", timeOptions));
-    template.find(".departing-flight-arrival-time").text(new Date(package.flights.departing.departure.time).toLocaleDateString("en-GB", timeOptions));
+    template.find(".departing-flight-arrival-time").text(new Date(package.flights.departing.arrival.time).toLocaleDateString("en-GB", timeOptions));
 
     template.find(".returning-flight-departure-airport").text(package.flights.returning.departure.airport);
     template.find(".returning-flight-arrival-airport").text(package.flights.returning.arrival.airport);
     template.find(".returning-flight-departure-time").text(new Date(package.flights.returning.departure.time).toLocaleDateString("en-GB", timeOptions));
-    template.find(".returning-flight-arrival-time").text(new Date(package.flights.returning.departure.time).toLocaleDateString("en-GB", timeOptions));
+    template.find(".returning-flight-arrival-time").text(new Date(package.flights.returning.arrival.time).toLocaleDateString("en-GB", timeOptions));
 
     // Set the price
     template.find(".price").text(package.price);
