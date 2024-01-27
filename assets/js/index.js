@@ -24,6 +24,9 @@ $(async function () {
 
     // Setup functionality for the user to input destinations
     setupToInput(destinations, onDestinationsSelected);
+
+    // Setup popular destinations links
+    setupPopularDestinations(packages);
 });
 
 /**
@@ -307,4 +310,22 @@ function onAirportsSelected(selectedAirports) {
 function onDestinationsSelected(selectedDestinations) {
     // Log the user's selection
     console.log("Selected destinations", selectedDestinations);
+}
+
+/**
+ * Set popular destination links to the packages page
+ * @param {*} packages List of packages
+ */
+function setupPopularDestinations(packages) {
+    $("#popular-destinations a").each(function () {
+        const city = $(this).data("city");
+        const country = $(this).data("country");
+
+        const ids = packages
+            .filter(p => p.location.city === city && p.location.country === country)
+            .map(p => p.id);
+
+        if (location)
+            $(this).attr("href", `packages.html?id=${ids.join(',')}`);
+    });
 }
