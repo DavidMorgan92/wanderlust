@@ -25,6 +25,9 @@ $(async function () {
     // Setup functionality for the user to input destinations
     setupToInput(destinations, onDestinationsSelected);
 
+    // Setup leaving input
+    setupLeavingInput();
+
     // Setup popular destinations links
     setupPopularDestinations(packages);
 });
@@ -197,6 +200,10 @@ function setupToInput(destinations, onDestinationsSelected) {
             onDestinationsSelected([selectedDestination]);
         }
     });
+}
+
+function setupLeavingInput() {
+    $("#leaving").attr("min", new Date().toISOString().slice(0, 10));
 }
 
 /**
