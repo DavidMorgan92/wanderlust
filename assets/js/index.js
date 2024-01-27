@@ -265,7 +265,7 @@ function distinct(value, index, array) {
  */
 function getAllDepartureAirports(packages) {
     const airports = packages
-        .flatMap(p => p.departureAirports)
+        .flatMap(p => p.flights.departing.departure.airport)
         .filter(distinct)
         .sort();
 

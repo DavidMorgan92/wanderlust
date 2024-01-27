@@ -5,6 +5,10 @@
             "city": "London",
             "country": "United Kingdom"
         },
+        "googleMapsLink": "https://www.google.com/maps/search/?api=1&query=51.5138175%2C-0.1089092&query_place_id=ChIJ3a_7H7MEdkgRH0uRAJIAhf0",
+        "bagAllowance": 20,
+        "handBagAllowance": 10,
+        "atolProtected": true,
         "flights": {
             "departing": {
                 "departure": {

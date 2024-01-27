@@ -15,12 +15,14 @@
 <body>
     <div class="container">
         <!-- Breadcrumbs -->
-        <nav class="my-4" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Package List</li>
-            </ol>
-        </nav>
+        <div class="row">
+            <nav class="my-4" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Package List</li>
+                </ol>
+            </nav>
+        </div>
 
         <!-- Sort dropdown -->
         <div class="row">
@@ -52,124 +54,141 @@
         </div>
 
         <!-- Footer -->
-        <footer class="py-3 my-4 text-center bg-light">
-            <a href="contact.html" class="btn btn-link">Contact Us</a>
-            <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#attribution-modal">Content
-                Attribution</a>
+        <footer class="py-3 my-4 text-center bg-light row">
+            <div class="col-12 col-sm-6">
+                <a href="contact.html" class="btn btn-link">Contact Us</a>
+            </div>
+            <div class="col-12 col-sm-6">
+                <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#attribution-modal">Content
+                    Attribution</a>
+            </div>
         </footer>
     </div>
 
     <!-- Search result template -->
     <div id="search-result-template" class="col-sm-12 my-4" hidden>
-        <div class="border rounded p-2">
-            <div class="row">
-                <div class="col-sm-12">
-                    <!-- Holiday name -->
-                    <h3 class="search-result-title">Title</h3>
-    
-                    <!-- Link to location on map -->
-                </div>
-            </div>
-    
-            <div class="row">
-                <!-- Image gallery -->
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="border"></div>
-                </div>
-    
-                <!-- Details tabs -->
-                <div class="col-sm-12 col-md-6 col-lg-6">
-                    <!-- Tab controls -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Holiday</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Hotel</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Flights</button>
-                        </li>
-                    </ul>
-    
-                    <div class="tab-content">
-                        <!-- Holiday tab -->
-                        <div class="tab-pane active p-2 border" role="tabpanel">
-                            <p>
-                                <strong>
-                                    <span class="nights"></span> Nights, <span class="date"></span>
-                                </strong>
-                            </p>
-    
-                            <p>
-                                <i class="bi bi-suitcase-fill"></i>
-                                <span class="bag-allowance"></span>kg Bag Allowance
-                                <br>
-    
-                                <i class="bi bi-suitcase-lg-fill"></i>
-                                <span class="hand-bag-allowance"></span>kg Hand Baggage
-                                <br>
-    
-                                <i class="bi bi-key-fill"></i>
-                                <span class="rooms"></span> x Standard Double room
-                                <br>
-    
-                                <i class="bi bi-shield-fill"></i>
-                                ATOL protected
-                            </p>
-                        </div>
-    
-                        <!-- Hotel tab -->
-                        <div class="tab-pane p-2 border" role="tabpanel"></div>
-    
-                        <!-- Flights tab -->
-                        <div class="tab-pane p-2 border" role="tabpanel">
-                            <p>
-                                Going out
-                                <br>
-                                
-                                <span class="departing-flight-departure-airport"></span>
-                                <i class="bi bi-airplane-fill rotate-icon"></i>
-                                <span class="departing-flight-arrival-airport"></span>
-                                <br>
-    
-                                Departs:
-                                <span class="departing-flight-departure-time"></span>
-                                <br>
-    
-                                Arrives:
-                                <span class="departing-flight-arrival-time"></span>
-                            </p>
-    
-                            <p>
-                                Coming back
-                                <br>
-    
-                                <span class="returning-flight-departure-airport"></span>
-                                <i class="bi bi-airplane-fill rotate-icon"></i>
-                                <span class="returning-flight-arrival-airport"></span>
-                                <br>
-    
-                                Departs:
-                                <span class="returning-flight-departure-time"></span>
-                                <br>
-    
-                                Arrives:
-                                <span class="returning-flight-arrival-time"></span>
-                            </p>
-                        </div>
+        <div class="border rounded p-2 row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- Holiday name -->
+                        <h3 class="search-result-title">Title</h3>
+
+                        <!-- Link to location on map -->
+                        <a href="#" class="location-link" target="_blank">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </a>
                     </div>
                 </div>
-    
-                <!-- Price -->
-                <div class="col-sm-12 col-md-12 col-lg-2">
-                    <div class="border p-2 h-100 d-flex flex-column flex-md-row flex-lg-column justify-content-between">
-                        <p class="d-flex flex-row flex-lg-column">
-                            <span class="me-1 me-lg-0">Holiday price</span>
-                            <span class="h5">£<span class="price"></span></span>
-                        </p>
-        
-                        <a href="" class="btn btn-primary align-self-auto align-self-md-center align-self-lg-auto">More info</a>
+
+                <div class="row">
+                    <!-- Image gallery -->
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="border"></div>
+                    </div>
+
+                    <!-- Details tabs -->
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <!-- Tab controls -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="tab" type="button" role="tab"
+                                    aria-selected="true">Holiday</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" type="button" role="tab"
+                                    aria-selected="false">Hotel</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" type="button" role="tab"
+                                    aria-selected="false">Flights</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <!-- Holiday tab -->
+                            <div class="tab-pane active p-2 border border-top-0" role="tabpanel">
+                                <p>
+                                    <strong>
+                                        <span class="nights"></span> Nights, <span class="date"></span>
+                                    </strong>
+                                </p>
+
+                                <p>
+                                    <i class="bi bi-suitcase-fill"></i>
+                                    <span class="bag-allowance"></span>kg Bag Allowance
+                                    <br>
+
+                                    <i class="bi bi-suitcase-lg-fill"></i>
+                                    <span class="hand-bag-allowance"></span>kg Hand Baggage
+                                    <br>
+
+                                    <i class="bi bi-key-fill"></i>
+                                    <span class="rooms"></span> x Standard Double room
+                                    <br>
+
+                                    <span class="atol-protected">
+                                        <i class="bi bi-shield-fill"></i>
+                                        ATOL protected
+                                    </span>
+                                </p>
+                            </div>
+
+                            <!-- Hotel tab -->
+                            <div class="tab-pane p-2 border border-top-0" role="tabpanel"></div>
+
+                            <!-- Flights tab -->
+                            <div class="tab-pane p-2 border border-top-0" role="tabpanel">
+                                <p>
+                                    Going out
+                                    <br>
+
+                                    <span class="departing-flight-departure-airport"></span>
+                                    <i class="bi bi-airplane-fill rotate-icon"></i>
+                                    <span class="departing-flight-arrival-airport"></span>
+                                    <br>
+
+                                    Departs:
+                                    <span class="departing-flight-departure-time"></span>
+                                    <br>
+
+                                    Arrives:
+                                    <span class="departing-flight-arrival-time"></span>
+                                </p>
+
+                                <p>
+                                    Coming back
+                                    <br>
+
+                                    <span class="returning-flight-departure-airport"></span>
+                                    <i class="bi bi-airplane-fill rotate-icon"></i>
+                                    <span class="returning-flight-arrival-airport"></span>
+                                    <br>
+
+                                    Departs:
+                                    <span class="returning-flight-departure-time"></span>
+                                    <br>
+
+                                    Arrives:
+                                    <span class="returning-flight-arrival-time"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="col-sm-12 col-md-12 col-lg-2">
+                        <div
+                            class="border p-2 h-100 d-flex flex-column flex-md-row flex-lg-column justify-content-between">
+                            <p class="d-flex flex-row flex-lg-column">
+                                <span class="me-1 me-lg-0">Holiday price</span>
+                                <span class="h5">£<span class="price"></span></span>
+                            </p>
+
+                            <a href="#"
+                                class="btn btn-primary align-self-auto align-self-md-center align-self-lg-auto">More
+                                info</a>
+                        </div>
                     </div>
                 </div>
             </div>

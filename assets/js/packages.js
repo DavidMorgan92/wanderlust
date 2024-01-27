@@ -7,7 +7,7 @@ $(async function () {
 
     // Parse the ID url param
     const params = new URLSearchParams(document.location.search);
-    const searchIds = params.get("id").split(',').map(Number);
+    const searchIds = params.get("id")?.split(',')?.map(Number) ?? [];
 
     console.log("ID param", searchIds);
 
@@ -37,22 +37,59 @@ function clonePackageTemplate(package) {
     template.removeAttr("id hidden");
     $("#results").append(template);
 
-    template.find(".search-result-title").text(package.hotel.name)
+    // Setup title
+    template.find(".search-result-title").text(package.hotel.name);
+
+    // Setup location link
+    template.find(".location-link").attr("href", package.googleMapsLink);
+    template.find(".location-link").append(`<span>${package.location.city}, ${package.location.country}</span>`);
+
+    // Setup tabs
+    const [holidayTab, hotelTab, flightsTab] = template.find(".nav-tabs .nav-link");
+    const [holidayTabPane, hotelTabPane, flightsTabPane] = template.find(".tab-pane");
 
     const holidayTabId = `package-${package.id}-holiday-tab`;
     const hotelTabId = `package-${package.id}-hotel-tab`;
     const flightsTabId = `package-${package.id}-flights-tab`;
 
-    const tabPanes = template.find(".tab-pane");
-    $(tabPanes[0]).attr("id", holidayTabId);
-    $(tabPanes[1]).attr("id", hotelTabId);
-    $(tabPanes[2]).attr("id", flightsTabId);
+    $(holidayTab).attr("data-bs-target", `#${holidayTabId}`);
+    $(hotelTab).attr("data-bs-target", `#${hotelTabId}`);
+    $(flightsTab).attr("data-bs-target", `#${flightsTabId}`);
 
-    const tabs = template.find(".nav-tabs .nav-link");
-    $(tabs[0]).attr("data-bs-target", `#${holidayTabId}`);
-    $(tabs[1]).attr("data-bs-target", `#${hotelTabId}`);
-    $(tabs[2]).attr("data-bs-target", `#${flightsTabId}`);
+    $(holidayTabPane).attr("id", holidayTabId);
+    $(hotelTabPane).attr("id", hotelTabId);
+    $(flightsTabPane).attr("id", flightsTabId);
 
+    // Setup holiday tab pane
+    template.find(".bag-allowance").text(package.bagAllowance);
+    template.find(".hand-bag-allowance").text(package.handBagAllowance);
+
+    template.find(".atol-protected").attr("hidden", !package.atolProtected);
+
+    // Setup hotel tab pane
     for (const feature of package.hotel.features)
-        $(tabPanes[1]).append(`<span>${feature}</span><br>`);
+        $(hotelTabPane).append(`<span>${feature}</span><br>`);
+
+    // Setup flights tab pane
+    const timeOptions = {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    };
+
+    template.find(".departing-flight-departure-airport").text(package.flights.departing.departure.airport);
+    template.find(".departing-flight-arrival-airport").text(package.flights.departing.arrival.airport);
+    template.find(".departing-flight-departure-time").text(new Date(package.flights.departing.departure.time).toLocaleDateString("en-GB", timeOptions));
+    template.find(".departing-flight-arrival-time").text(new Date(package.flights.departing.departure.time).toLocaleDateString("en-GB", timeOptions));
+
+    template.find(".returning-flight-departure-airport").text(package.flights.returning.departure.airport);
+    template.find(".returning-flight-arrival-airport").text(package.flights.returning.arrival.airport);
+    template.find(".returning-flight-departure-time").text(new Date(package.flights.returning.departure.time).toLocaleDateString("en-GB", timeOptions));
+    template.find(".returning-flight-arrival-time").text(new Date(package.flights.returning.departure.time).toLocaleDateString("en-GB", timeOptions));
+
+    // Set the price
+    template.find(".price").text(package.price);
 }
