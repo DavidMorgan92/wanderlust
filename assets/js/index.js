@@ -1,11 +1,5 @@
-/** Reference to the error modal */
-let errorModal;
-
 // On document ready
 $(async function () {
-    // Set up the error modal
-    setupErrorModal();
-
     // Download package data
     const packages = await getPackages();
 
@@ -237,28 +231,6 @@ function cloneFormCheckTemplate(id, value, text) {
     checkbox.find("label").text(text).attr("for", id);
 
     return checkbox;
-}
-
-/**
- * Initialize the error modal
- */
-function setupErrorModal() {
-    // Store reference to error modal
-    errorModal = new bootstrap.Modal("#error-modal");
-
-    // Setup error modal refresh button to refresh the page
-    $("#error-modal-refresh-button").on("click", function () {
-        location.reload();
-    });
-}
-
-/**
- * Show the error modal with a given message
- * @param {string} error.message The message to show in the dialog box
- */
-function showErrorModal(error) {
-    $("#error-modal-message").text(error.message);
-    errorModal.show();
 }
 
 /**
