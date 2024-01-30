@@ -25,8 +25,10 @@ $(async function () {
     }
 
     // If there are results, clone a template for each one
-    for (const result of results)
-        clonePackageTemplate(result);
+    for (const result of results) {
+        const templateClone = clonePackageTemplate(result);
+        setMoreInfoButtonLink(templateClone, result.id, params.get("id"));
+    }
 
     // Show results
     $("#results").attr("hidden", false);
@@ -92,4 +94,17 @@ function clonePackageTemplate(package) {
 
     // Set the price
     template.find(".price").text(package.price);
+
+    return template;
+}
+
+/**
+ * Set the href of the "more info" link button in a cloned package template element
+ * @param {*} packageTemplateClone The cloned package template element
+ * @param {number} packageId The ID of the package that this cloned template represents
+ * @param {number[]} searchIds IDs that were provided to this page as search results
+ */
+function setMoreInfoButtonLink(packageTemplateClone, packageId, searchIds) {
+    const href = `package.html?id=${packageId}&searchIds=${searchIds}`;
+    $(packageTemplateClone).find(".more-info-button").attr("href", href);
 }
