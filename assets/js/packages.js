@@ -34,6 +34,11 @@ $(async function () {
     $("#results").attr("hidden", false);
 });
 
+/**
+ * Clone the package template and populate it with data from the given package
+ * @param {*} package The package data with which to populate the elements
+ * @returns A cloned package template
+ */
 function clonePackageTemplate(package) {
     const template = $("#search-result-template").clone();
     template.removeAttr("id hidden");
