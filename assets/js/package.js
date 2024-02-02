@@ -39,8 +39,10 @@ function loadFacilities(package) {
 
         // For each info section for this card
         for (const info of card.info) {
+            // Get the body of the card template
             const cardBody = $(cardTemplate).find(".card-body");
 
+            // If the info contains a title clone a title template and add it to the card body
             if (info.title) {
                 const titleTemplate = $("#facilities-card-title-template").clone();
                 $(titleTemplate).prop("hidden", false);
@@ -49,6 +51,7 @@ function loadFacilities(package) {
                 $(cardBody).append(titleTemplate);
             }
 
+            // If the info contains text clone a text template and add it to the card body
             if (info.text) {
                 const textTemplate = $("#facilities-card-text-template").clone();
                 $(textTemplate).prop("hidden", false);
@@ -62,5 +65,6 @@ function loadFacilities(package) {
     // Set up toggle action for header buttons in facilities cards
     $("#facilities-tab").on("click", "button", function () {
         $(this).closest(".card").find(".card-body").slideToggle();
+        $(this).toggleClass("rotate-icon-180");
     });
 }

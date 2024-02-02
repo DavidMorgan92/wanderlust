@@ -37,3 +37,11 @@
 .rotate-icon::before {
     transform: rotate(90deg);
 }
+
+#facilities-tab .card-header .bi::before {
+    transition: transform 0.5s;
+}
+
+.rotate-icon-180::before {
+    transform: rotate(180deg);
+}
