@@ -5,7 +5,7 @@ $(async function () {
 
     // Unhide the search form and hide the loading spinner once packages are loaded
     $("#search-form").attr("hidden", false);
-    $("#spinner-container").removeClass("d-flex").addClass("d-none");
+    $(".spinner-container").removeClass("d-flex").addClass("d-none");
 
     // Get list of all departure airports
     const departureAirports = getAllDepartureAirports(packages);

@@ -3,7 +3,7 @@ $(async function () {
     const packages = await getPackages();
 
     // Hide the loading spinner once packages are loaded
-    $("#spinner-container").removeClass("d-flex").addClass("d-none");
+    $(".spinner-container").removeClass("d-flex").addClass("d-none");
 
     // Parse the ID url param
     const params = new URLSearchParams(document.location.search);

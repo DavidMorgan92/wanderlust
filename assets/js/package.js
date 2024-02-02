@@ -9,13 +9,25 @@ $(async function () {
 
     console.log("Package loaded", package);
 
+    // Remove all loading spinners
+    $(".spinner-container").remove();
+
     // Show error if package not found
 
     // Set the URL for the breadcrumb
     $("#package-list-link").attr("href", "packages.html?id=" + params.get("searchIds"));
 
+    // Set page title and location
+    $("#title").text(package.hotel.name);
+    $("#title").parent().removeClass("placeholder");
+    $("#location").text(`${package.location.city}, ${package.location.country}`);
+    $("#location").parent().removeClass("placeholder");
+
     // Load the facilities tab
     loadFacilities(package);
+
+    // Load the location tab
+    loadLocation(package);
 });
 
 /**
@@ -67,4 +79,11 @@ function loadFacilities(package) {
         $(this).closest(".card").find(".card-body").slideToggle();
         $(this).toggleClass("rotate-icon-180");
     });
+}
+
+/**
+ * Load the location tab from the given package data
+ */
+function loadLocation(package) {
+
 }

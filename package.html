@@ -26,22 +26,22 @@
         </div>
 
         <!-- Header -->
-        <div class="row">
-            <div class="col-12">
-                <h1 id="title"></h1>
+        <div class="row placeholder-glow">
+            <div class="col-12 placeholder placeholder-lg">
+                <h1 id="title">&nbsp;</h1>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <h5 id="location"></h5>
+        <div class="row placeholder-glow">
+            <div class="col-12 placeholder">
+                <h5 id="location">&nbsp;</h5>
             </div>
         </div>
 
         <!-- Details -->
         <div class="row">
             <div class="col-12">
-                <div class="border rounded"></div>
+                <div class="border rounded my-5"></div>
             </div>
         </div>
 
@@ -70,10 +70,25 @@
 
                 <div class="tab-content">
                     <!-- Overview tab -->
-                    <div id="overview-tab" class="tab-pane active p-2 border border-top-0" role="tabpanel"></div>
+                    <div id="overview-tab" class="tab-pane active p-2 border border-top-0" role="tabpanel">
+                        <!-- Loading spinner -->
+                        <div class="spinner-container d-flex justify-content-center align-items-center">
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Facilities tab -->
                     <div id="facilities-tab" class="tab-pane p-2 border border-top-0" role="tabpanel">
+                        <!-- Loading spinner -->
+                        <div class="spinner-container d-flex justify-content-center align-items-center">
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <!-- Wifi available indicator -->
                         <div id="wifi-available" hidden>
                             <i class="bi bi-wifi"></i>
                             Free wi-fi is available throughout the hotel
@@ -81,10 +96,24 @@
                     </div>
 
                     <!-- Rooms tab -->
-                    <div id="rooms-tab" class="tab-pane p-2 border border-top-0" role="tabpanel"></div>
+                    <div id="rooms-tab" class="tab-pane p-2 border border-top-0" role="tabpanel">
+                        <!-- Loading spinner -->
+                        <div class="spinner-container d-flex justify-content-center align-items-center">
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Location tab -->
-                    <div id="location-tab" class="tab-pane p-2 border border-top-0" role="tabpanel"></div>
+                    <div id="location-tab" class="tab-pane p-2 border border-top-0" role="tabpanel">
+                        <!-- Loading spinner -->
+                        <div class="spinner-container d-flex justify-content-center align-items-center">
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
