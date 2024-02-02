@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="row">
+            <nav class="my-4" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a id="package-list-link" href="packages.html">Package List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Package Details</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-12">
+                <h1 id="title"></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h5 id="location"></h5>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="row">
+            <div class="col-12">
+                <div class="border rounded"></div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Tab controls -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview-tab"
+                            type="button" role="tab" aria-selected="true">Overview</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#facilities-tab" type="button"
+                            role="tab" aria-selected="false">Facilities</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rooms-tab" type="button"
+                            role="tab" aria-selected="false">Rooms</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#location-tab" type="button"
+                            role="tab" aria-selected="false">Location</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Overview tab -->
+                    <div id="overview-tab" class="tab-pane active p-2 border border-top-0" role="tabpanel"></div>
+
+                    <!-- Facilities tab -->
+                    <div id="facilities-tab" class="tab-pane p-2 border border-top-0" role="tabpanel">
+                        <div id="wifi-available" hidden>
+                            <i class="bi bi-wifi"></i>
+                            Free wi-fi is available throughout the hotel
+                        </div>
+                    </div>
+
+                    <!-- Rooms tab -->
+                    <div id="rooms-tab" class="tab-pane p-2 border border-top-0" role="tabpanel"></div>
+
+                    <!-- Location tab -->
+                    <div id="location-tab" class="tab-pane p-2 border border-top-0" role="tabpanel"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-3 my-4 text-center bg-light row">
+            <div class="col-12 col-sm-6">
+                <a href="contact.html" class="btn btn-link">Contact Us</a>
+            </div>
+            <div class="col-12 col-sm-6">
+                <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#attribution-modal">Content
+                    Attribution</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Facilities tab card template -->
+    <div class="card my-2" id="facilities-card-template" hidden>
+        <div class="card-header d-flex justify-content-between">
+            <h5 class="card-title"></h5>
+            <button class="bi bi-chevron-up btn btn-toolbar" title="Hide/show" type="button"></button>
+        </div>
+        <div class="card-body"></div>
+    </div>
+
+    <!-- Facilities card title template -->
+    <h5 class="card-title" id="facilities-card-title-template" hidden></h5>
+
+    <!-- Facilities card text template -->
+    <p class="card-text" id="facilities-card-text-template" hidden></p>
+
+    <!-- This modal is used for showing errors to the user -->
+    <div id="error-modal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">An error occurred</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- This p will show the error message -->
+                    <p id="error-modal-message"></p>
+                    <p>Please refresh the page.</p>
+                </div>
+                <div class="modal-footer">
+                    <!-- This button will refresh the page -->
+                    <button id="error-modal-refresh-button" type="button" class="btn btn-primary">Refresh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This modal is used for showing content attribution to the user -->
+    <div id="attribution-modal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Content attribution</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Favicon attribution -->
+                    <p class="h6">Favicon</p>
+                    <img src="assets/favicon.png">
+                    <p>
+                        <a target="_blank" href="https://icons8.com/icon/JxowWafYSEQ6/beach">Beach</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/package.js"></script>
+</body>
+
+</html>

@@ -39,7 +39,57 @@
                 "Comfortable rooms",
                 "Outdoor pool area",
                 "Gym"
-            ]
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Board Basis",
+                        "info": [
+                            {
+                                "title": "Bed and Breakfast"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Coffee Bar",
+                                "text": "lorem ipsum"
+                            },
+                            {
+                                "title": "Centro Restaurant",
+                                "text": "asdfasdf"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "asdfasdfasdf"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Sports & Leisure",
+                        "info": [
+                            {
+                                "text": "asdfasdfasdf"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Other Facilities",
+                        "info": [
+                            {
+                                "text": "asdfasdfasdf"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     }
 ]
