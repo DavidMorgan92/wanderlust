@@ -48,7 +48,7 @@ function clonePackageTemplate(package) {
     template.find(".search-result-title").text(package.hotel.name);
 
     // Setup location link
-    template.find(".location-link").attr("href", package.googleMapsLink);
+    template.find(".location-link").attr("href", `https://www.google.com/maps/search/?api=1&query=${package.location.lat}%2C${package.location.lng}&query_place_id=${package.location.placeId}`);
     template.find(".location-link").append(`<span>${package.location.city}, ${package.location.country}</span>`);
 
     // Setup tabs
