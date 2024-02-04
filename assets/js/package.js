@@ -27,7 +27,7 @@ $(async function () {
     loadFacilities(package);
 
     // Load the location tab
-    loadLocation(package);
+    await loadLocation(package);
 });
 
 /**
@@ -84,6 +84,97 @@ function loadFacilities(package) {
 /**
  * Load the location tab from the given package data
  */
-function loadLocation(package) {
+async function loadLocation(package) {
+    // Load the required libraries
+    const libraryPromises = [
+        google.maps.importLibrary("maps"),
+        google.maps.importLibrary("marker"),
+        google.maps.importLibrary("places")
+    ];
 
+    const [{ Map }, { Marker }, { PlacesService, PlacesServiceStatus }] = await Promise.all(libraryPromises);
+
+    // Get the map HTML element
+    const mapElement = $("#map");
+
+    // Give the map a height so it is visible
+    $(mapElement).css("height", "500px");
+
+    // Construct the map with the HTML element and coordinates
+    const map = new Map($(mapElement).get(0), {
+        center: { lat: package.location.lat, lng: package.location.lng },
+        zoom: 17
+    });
+
+    // Construct the places service
+    const placesService = new PlacesService(map);
+
+    // Request the hotel through the places service
+    const hotelRequest = {
+        location: map.getCenter(),
+        radius: '500',
+        query: package.hotel.name
+    };
+
+    placesService.textSearch(hotelRequest, (results, status) => {
+        if (status !== PlacesServiceStatus.OK)
+            return;
+
+        // Add a marker for the hotel to the map
+        new Marker({
+            map,
+            place: {
+                placeId: results[0].place_id,
+                location: results[0].geometry.location
+            }
+        });
+    });
+
+    // Restaurant request
+    const restaurantRequest = {
+        location: map.getCenter(),
+        radius: '1000',
+        query: 'restaurant'
+    };
+
+    placesService.textSearch(restaurantRequest, (results, status) => {
+        if (status !== PlacesServiceStatus.OK)
+            return;
+
+        console.log("Nearby restaurants", results);
+
+        for (const result of results) {
+            const resultElement = $("<div></div>");
+            const resultLink = $("<a></a>");
+            $(resultLink).attr("href", `https://www.google.com/maps/search/?api=1&query=${result.geometry.location.lat()}%2C${result.geometry.location.lng()}&query_place_id=${result.place_id}`);
+            $(resultLink).attr("target", "_blank");
+            $(resultLink).text(result.name);
+            $(resultLink).appendTo($(resultElement));
+            $(resultElement).appendTo("#nearby-restaurants");
+        }
+    });
+
+    // Restaurant request
+    const attractionsRequest = {
+        location: map.getCenter(),
+        radius: '1000',
+        query: 'attraction'
+    };
+
+    placesService.textSearch(attractionsRequest, (results, status) => {
+        if (status !== PlacesServiceStatus.OK)
+            return;
+
+        console.log("Nearby attractions", results);
+
+        for (const result of results) {
+            const resultElement = $("<div></div>");
+            const resultLink = $("<a></a>");
+            $(resultLink).attr("href", `https://www.google.com/maps/search/?api=1&query=${result.geometry.location.lat()}%2C${result.geometry.location.lng()}&query_place_id=${result.place_id}`);
+            $(resultLink).attr("target", "_blank");
+            $(resultLink).text(result.name);
+            $(resultLink).appendTo($(resultElement));
+            $(resultElement).appendTo("#nearby-attractions");
+        }
+    });
 }
