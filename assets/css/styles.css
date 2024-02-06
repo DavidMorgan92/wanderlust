@@ -80,3 +80,7 @@
         flex-wrap: wrap;
     }
 }
+
+.gallery {
+    max-height: 300px;
+}

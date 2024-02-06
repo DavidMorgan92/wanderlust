@@ -51,6 +51,24 @@ function clonePackageTemplate(package) {
     template.find(".location-link").attr("href", `https://www.google.com/maps/search/?api=1&query=${package.location.lat}%2C${package.location.lng}&query_place_id=${package.location.placeId}`);
     template.find(".location-link").append(`<span>${package.location.city}, ${package.location.country}</span>`);
 
+    // Setup image gallery
+    template.find(".gallery").attr("src", `assets/images/hotels/${package.hotel.images[0]}`);
+    template.find(".gallery").data("selected-index", 0);
+
+    template.find(".previous-image-button").on("click", function () {
+        const selectedIndex = template.find(".gallery").data("selected-index");
+        const newIndex = selectedIndex - 1 < 0 ? package.hotel.images.length - 1 : selectedIndex - 1;
+        template.find(".gallery").attr("src", `assets/images/hotels/${package.hotel.images[newIndex]}`);
+        template.find(".gallery").data("selected-index", newIndex);
+    });
+
+    template.find(".next-image-button").on("click", function () {
+        const selectedIndex = template.find(".gallery").data("selected-index");
+        const newIndex = selectedIndex + 1 >= package.hotel.images.length ? 0 : selectedIndex + 1;
+        template.find(".gallery").attr("src", `assets/images/hotels/${package.hotel.images[newIndex]}`);
+        template.find(".gallery").data("selected-index", newIndex);
+    });
+
     // Setup tabs
     const [holidayTab, hotelTab, flightsTab] = template.find(".nav-tabs .nav-link");
     const [holidayTabPane, hotelTabPane, flightsTabPane] = template.find(".tab-pane");
