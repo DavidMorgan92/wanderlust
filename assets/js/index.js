@@ -33,12 +33,43 @@ $(async function () {
         event.preventDefault();
 
         // Find all packages that match the search terms
-        const packageIds = packages.map(p => p.id);
+        let filteredPackages = packages;
 
-        
+        // Filter by departure airport
+        filteredPackages = filteredPackages.filter(p => _selectedAirports.includes(p.flights.departing.departure.airport));
+        console.log("Packages matching chosen departure airports", filteredPackages);
+
+        // Filter by destination
+        filteredPackages = filteredPackages.filter(p => _selectedDestinations.includes(formatLocationString(p.location)));
+        console.log("Packages also matching chosen destinations", filteredPackages);
+
+        // Filter by departure time
+        filteredPackages = filteredPackages.filter(p => {
+            const departureDate = new Date(Date.parse(p.flights.departing.departure.time));
+            const chosenDate = new Date(Date.parse($("#leaving").val()));
+
+            return departureDate.getUTCFullYear() === chosenDate.getUTCFullYear()
+                && departureDate.getUTCMonth() === chosenDate.getUTCMonth()
+                && departureDate.getUTCDate() === chosenDate.getUTCDate();
+        });
+
+        console.log("Packages also departing on the chosen date", filteredPackages);
+
+        // Filter by arrival time matching the number of nights at destination
+        filteredPackages = filteredPackages.filter(p => {
+            const departureDate = Date.parse(p.flights.departing.departure.time);
+            const returnDate = Date.parse(p.flights.returning.arrival.time);
+            const dayDiff = (returnDate - departureDate) / 1000 / 60 / 60 / 24;
+            
+            return Math.floor(dayDiff) === Number($("#nights").val());
+        });
+
+        console.log("Packages also returning after the chosen number of nights", filteredPackages);
+
+        // TODO Filter by chosen number of guests
 
         // Go to the search page
-        location.href = `packages.html?id=${packageIds.join(',')}`;
+        location.href = `packages.html?id=${filteredPackages.map(p => p.id).join(',')}`;
     });
 });
 
