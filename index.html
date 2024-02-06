@@ -30,31 +30,31 @@
 
             <form id="search-form" hidden>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="text" class="form-control" id="from" placeholder="From" list="from-datalist">
+                    <input type="text" class="form-control" id="from" placeholder="From" list="from-datalist" required>
                     <label for="from">From</label>
                     <i class="bi bi-geo-alt-fill"></i>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#from-modal">See list</a>
                     <datalist id="from-datalist"></datalist>
                 </div>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="text" class="form-control" id="to" placeholder="To" list="to-datalist">
+                    <input type="text" class="form-control" id="to" placeholder="To" list="to-datalist" required>
                     <label for="to">To</label>
                     <i class="bi bi-geo-alt-fill"></i>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#to-modal">See list</a>
                     <datalist id="to-datalist"></datalist>
                 </div>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="date" class="form-control" id="leaving" placeholder="Leaving">
+                    <input type="date" class="form-control" id="leaving" placeholder="Leaving" required>
                     <label for="leaving">Leaving</label>
                     <i class="bi bi-calendar"></i>
                 </div>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="number" class="form-control" id="nights" placeholder="Nights" min="1" max="100">
+                    <input type="number" class="form-control" id="nights" placeholder="Nights" min="1" max="100" required>
                     <label for="nights">Nights</label>
                     <i class="bi bi-calendar"></i>
                 </div>
                 <div class="form-floating search-form-input mb-3">
-                    <input type="text" class="form-control" id="guests" placeholder="Guests" readonly>
+                    <input type="number" class="form-control" id="guests" placeholder="Guests" min="1" max="16" required>
                     <label for="guests">Guests</label>
                     <i class="bi bi-person-fill"></i>
                 </div>

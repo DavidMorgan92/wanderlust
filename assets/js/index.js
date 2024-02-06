@@ -1,3 +1,6 @@
+let _selectedAirports = [];
+let _selectedDestinations = [];
+
 // On document ready
 $(async function () {
     // Download package data
@@ -24,6 +27,19 @@ $(async function () {
 
     // Setup popular destinations links
     setupPopularDestinations(packages);
+
+    // On search form submitted
+    $("#search-form").on("submit", function (event) {
+        event.preventDefault();
+
+        // Find all packages that match the search terms
+        const packageIds = packages.map(p => p.id);
+
+        
+
+        // Go to the search page
+        location.href = `packages.html?id=${packageIds.join(',')}`;
+    });
 });
 
 /**
@@ -280,6 +296,8 @@ function getAllDestinations(packages) {
 function onAirportsSelected(selectedAirports) {
     // Log the user's selection
     console.log("Selected airports", selectedAirports);
+
+    _selectedAirports = selectedAirports;
 }
 
 /**
@@ -289,6 +307,8 @@ function onAirportsSelected(selectedAirports) {
 function onDestinationsSelected(selectedDestinations) {
     // Log the user's selection
     console.log("Selected destinations", selectedDestinations);
+
+    _selectedDestinations = selectedDestinations;
 }
 
 /**
