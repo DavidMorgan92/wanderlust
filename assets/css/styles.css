@@ -45,3 +45,38 @@
 .rotate-icon-180::before {
     transform: rotate(180deg);
 }
+
+#image-thumbnails img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.next-image-button {
+    position: absolute;
+    right: 0;
+}
+
+.previous-image-button {
+    position: absolute;
+    left: 0;
+}
+
+.next-image-button i::before, .previous-image-button i::before {
+    color: white;
+    mix-blend-mode: difference;
+    font-size: 64px;
+    font-weight: 600 !important;
+}
+
+#image-thumbnails {
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 992px) {
+    #image-thumbnails {
+        overflow: unset;
+        flex-wrap: wrap;
+    }
+}

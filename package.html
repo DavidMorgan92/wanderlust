@@ -77,6 +77,38 @@
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>
+
+                        <!-- Image gallery -->
+                        <div id="image-gallery" class="row" hidden>
+                            <div class="col-12 col-lg-8 text-center">
+                                <div class="d-flex position-relative justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-lg previous-image-button d-md-none">
+                                        <i class="bi bi-chevron-double-left"></i>
+                                        <span class="visually-hidden">Previous image</span>
+                                    </button>
+                                    <img id="large-image" alt="Hotel image" class="img-fluid mb-2">
+                                    <button type="button" class="btn btn-lg next-image-button d-md-none">
+                                        <i class="bi bi-chevron-double-right"></i>
+                                        <span class="visually-hidden">Next image</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 d-none d-md-block">
+                                <div class="d-flex">
+                                    <button type="button" class="btn btn-lg d-lg-none previous-image-button-secondary">
+                                        <i class="bi bi-chevron-double-left"></i>
+                                        <span class="visually-hidden">Previous image</span>
+                                    </button>
+                                    <div id="image-thumbnails"
+                                        class="d-flex gap-1 justify-content-center justify-content-md-start justify-content-lg-end">
+                                    </div>
+                                    <button type="button" class="btn btn-lg d-lg-none next-image-button-secondary">
+                                        <i class="bi bi-chevron-double-right"></i>
+                                        <span class="visually-hidden">Previous image</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Facilities tab -->

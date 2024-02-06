@@ -42,6 +42,14 @@
                 "Outdoor pool area",
                 "Gym"
             ],
+            "images": [
+                "apex-temple-court/1.jpg",
+                "apex-temple-court/2.jpg",
+                "apex-temple-court/3.jpg",
+                "apex-temple-court/4.jpg",
+                "apex-temple-court/5.jpg",
+                "apex-temple-court/6.jpg"
+            ],
             "facilities": {
                 "wifi": true,
                 "cards": [

@@ -7,12 +7,18 @@ $(async function () {
     const packageId = params.get("id");
     const package = packages.find(p => p.id === Number(packageId));
 
+    // Show error if package not found
+    if (!package) {
+        console.log("No package found for ID", packageId);
+        showErrorModal({ message: "Failed to load holiday package." });
+        
+        return;
+    }
+
     console.log("Package loaded", package);
 
     // Remove all loading spinners
     $(".spinner-container").remove();
-
-    // Show error if package not found
 
     // Set the URL for the breadcrumb
     $("#package-list-link").attr("href", "packages.html?id=" + params.get("searchIds"));
@@ -23,12 +29,70 @@ $(async function () {
     $("#location").text(`${package.location.city}, ${package.location.country}`);
     $("#location").parent().removeClass("placeholder");
 
+    // Load the overview tab
+    loadOverview(package);
+
     // Load the facilities tab
     loadFacilities(package);
 
     // Load the location tab
     await loadLocation(package);
 });
+
+/**
+ * Load the overview tab from the given package data
+ */
+function loadOverview(package) {
+    $("#image-gallery").prop("hidden", false);
+
+    let selectedImageIndex = 0;
+
+    $("#image-thumbnails").on("click", "img", function () {
+        $("#large-image").attr("src", $(this).attr("src"));
+        selectedImageIndex = $(this).data("index");
+    });
+
+    let i = 0;
+
+    for (const image of package.hotel.images) {
+        const thumbnail = $("<img/>");
+        thumbnail.attr("src", `assets/images/hotels/${image}`);
+        thumbnail.attr("data-index", i++);
+        $("#image-thumbnails").append(thumbnail);
+    }
+
+    $("#image-thumbnails img")[0].click();
+
+    $(".previous-image-button").on("click", function () {
+        let newIndex = selectedImageIndex - 1;
+        
+        if (newIndex < 0)
+            newIndex = i - 1;
+
+        $(`#image-thumbnails img[data-index=${newIndex}]`).trigger("click");
+    });
+
+    $(".next-image-button").on("click", function () {
+        let newIndex = selectedImageIndex + 1;
+        
+        if (newIndex >= i)
+            newIndex = 0;
+
+        $(`#image-thumbnails img[data-index=${newIndex}]`).trigger("click");
+    });
+
+    $(".previous-image-button-secondary").on("click", function () {
+        $("#image-thumbnails").scrollLeft({
+            scrollLeft: "-=100"
+        });
+    });
+
+    $(".next-image-button-secondary").on("click", function () {
+        $("#image-thumbnails").animate({
+            scrollLeft: "+=100"
+        });
+    });
+}
 
 /**
  * Load the facilities tab from the given package data
