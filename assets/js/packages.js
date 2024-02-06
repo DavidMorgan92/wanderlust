@@ -24,15 +24,27 @@ $(async function () {
         return;
     }
 
+    $("#sort-select").on("change", function () {
+        populateResults(results, $(this).val(), params);
+    });
+
     // If there are results, clone a template for each one
-    for (const result of results) {
-        const templateClone = clonePackageTemplate(result);
-        setMoreInfoButtonLink(templateClone, result.id, params.get("id"));
-    }
+    populateResults(results, 1, params);
 
     // Show results
     $("#results").attr("hidden", false);
 });
+
+function populateResults(results, sortOrder, params) {
+    $("#results").empty();
+
+    results.sort((a, b) => (a.price - b.price) * sortOrder);
+
+    for (const result of results) {
+        const templateClone = clonePackageTemplate(result);
+        setMoreInfoButtonLink(templateClone, result.id, params.get("id"));
+    }
+}
 
 /**
  * Clone the package template and populate it with data from the given package
