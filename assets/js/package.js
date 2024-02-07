@@ -29,6 +29,12 @@ $(async function () {
     $("#location").text(`${package.location.city}, ${package.location.country}`);
     $("#location").parent().removeClass("placeholder");
 
+    // Load the hotel blurb
+    $("#blurb").text(package.hotel.blurb);
+
+    // Load the holiday price
+    $("#price").text(`£${package.price}`);
+
     // Load the overview tab
     loadOverview(package);
 

@@ -36,6 +36,7 @@
         "price": 400,
         "hotel": {
             "name": "Apex Temple Court Hotel",
+            "blurb": "Buried in the heart of London, a new type of luxury awaits you at this elegant 4-star hotel. Its central location, eye-catching interiors and historic façade make it the perfect Fleet Street hotel to stay for family escapes, romantic city breaks and everything in between. Find yourself eating and sleeping opulence as you choose between spacious superior rooms and amazing master suites. Plus, dine with us at Chambers Restaurant to enjoy fresh and fine food or visit our chic wine bar, Lazy Ballerinas, to take your taste buds on a tour of the wines from all over the world.",
             "features": [
                 "Excellent transport links",
                 "Comfortable rooms",
