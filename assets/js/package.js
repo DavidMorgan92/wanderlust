@@ -41,6 +41,9 @@ $(async function () {
     // Load the facilities tab
     loadFacilities(package);
 
+    // Load the rooms tab
+    loadRooms(package);
+
     // Load the location tab
     await loadLocation(package);
 });
@@ -149,6 +152,22 @@ function loadFacilities(package) {
         $(this).closest(".card").find(".card-body").slideToggle();
         $(this).toggleClass("rotate-icon-180");
     });
+}
+
+function loadRooms(package) {
+    for (const room of package.hotel.rooms) {
+        const roomTemplate = $("#room-card-template").clone();
+        $(roomTemplate).prop("hidden", false);
+        $(roomTemplate).removeAttr("id");
+        $("#rooms-tab").append(roomTemplate);
+
+        $(roomTemplate).find(".card-header .card-title").text(room.name);
+
+        const sleepsP = $("<p></p>");
+        $(sleepsP).text(`Sleeps min: ${room.sleeps.min}, max: ${room.sleeps.max}`);
+
+        $(roomTemplate).append(sleepsP);
+    }
 }
 
 /**

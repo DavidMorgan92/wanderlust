@@ -100,7 +100,16 @@
                         ]
                     }
                 ]
-            }
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
         }
     }
 ]
