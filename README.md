@@ -319,6 +319,8 @@ This page will feature breadcrumbs at the top to allow the user to go back to th
 
 ### Surface
 
+The default Bootstrap scheme will be used in order to deliver a minimum viable product. This can be updated in future iterations.
+
 [↑ Back to top](#wanderlust)
 
 ## Technologies Used
