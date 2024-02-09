@@ -38,7 +38,7 @@ $(async function () {
 function populateResults(results, sortOrder, params) {
     $("#results").empty();
 
-    results.sort((a, b) => (a.price - b.price) * sortOrder);
+    results.sort((a, b) => (b.price - a.price) * sortOrder);
 
     for (const result of results) {
         const templateClone = clonePackageTemplate(result);
