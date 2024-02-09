@@ -1,5 +1,9 @@
 # Wanderlust
 
+![Responsiveness](documentation/images/responsiveness.jpg)
+
+Access the live deployment here: [https://davidmorgan92.github.io/wanderlust/](https://davidmorgan92.github.io/wanderlust/)
+
 ## Table of Contents
 
 - [UX](#ux)
