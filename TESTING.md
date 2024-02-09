@@ -22,15 +22,99 @@ Test run results:
 
 #### Form requires all values to be entered to submit
 
+<details>
+<summary>From required</summary>
+
+![From required](documentation/testing/home/form-requires-all-values-to-be-entered-to-submit/from-required.JPG)
+
+</details>
+
+<details>
+<summary>To required</summary>
+
+![To required](documentation/testing/home/form-requires-all-values-to-be-entered-to-submit/to-required.JPG)
+
+</details>
+
+<details>
+<summary>Leaving required</summary>
+
+![Leaving required](documentation/testing/home/form-requires-all-values-to-be-entered-to-submit/leaving-required.JPG)
+
+</details>
+
+<details>
+<summary>Nights required</summary>
+
+![Nights required](documentation/testing/home/form-requires-all-values-to-be-entered-to-submit/nights-required.JPG)
+
+</details>
+
+<details>
+<summary>Guests required</summary>
+
+![Guests required](documentation/testing/home/form-requires-all-values-to-be-entered-to-submit/guests-required.JPG)
+
+</details>
+
 #### Leaving date can't be in the past
+
+<details>
+<summary>Leaving date can't be in the past (test performed on 09/02/2024)</summary>
+
+![Leaving date can't be in the past](documentation/testing/home/leaving-date-cant-be-in-the-past/leaving-cant-be-in-the-past.JPG)
+
+</details>
 
 #### From input only accepts valid values
 
+<details>
+<summary>Before (invalid value entered)</summary>
+
+![Before](documentation/testing/home/from-input-only-accepts-valid-values/before.jpg)
+
+</details>
+
+<details>
+<summary>After (from input has lost focus)</summary>
+
+![After](documentation/testing/home/from-input-only-accepts-valid-values/after.jpg)
+
+</details>
+
 #### To input only accepts valid values
+
+<details>
+<summary>Before (invalid value entered)</summary>
+
+![Before](documentation/testing/home/to-input-only-accepts-valid-values/before.jpg)
+
+</details>
+
+<details>
+<summary>After (to input has lost focus)</summary>
+
+![After](documentation/testing/home/to-input-only-accepts-valid-values/after.jpg)
+
+</details>
 
 #### Nights input must be greater than or equal to 1
 
+<details>
+<summary>Nights input must be greater than or equal to 1</summary>
+
+![Nights input must be greater than or equal to 1](documentation/testing/home/nights-input-must-be-greater-than-or-equal-to-1/nights-input-must-be-greater-than-or-equal-to-1.JPG)
+
+</details>
+
 #### Guests input must be greater than or equal to 1
+
+<details>
+<summary>Guests input must be greater than or equal to 1</summary>
+
+![Guests input must be greater than or equal to 1](documentation/testing/home/guests-input-must-be-greater-than-or-equal-to-1/guests-input-must-be-greater-than-or-equal-to-1.JPG)
+
+</details>
 
 #### London popular destinations link works
 
@@ -47,8 +131,6 @@ Test run results:
 #### Home Contact Us link works
 
 #### Home Content Attribution modal works
-
-#### Breadcrumb link to home page works
 
 <br>
 
@@ -75,6 +157,8 @@ Test run results:
 #### Package List Contact Us link works
 
 #### Package List Content Attribution modal works
+
+#### Package List Breadcrumb link to home page works
 
 <br>
 
@@ -105,6 +189,10 @@ Test run results:
 #### Nearby restaurants links work
 
 #### Nearby attractions links works
+
+#### Package Details Breadcrumb link to home page works
+
+#### Package Details Breadcrumb link to package list page works
 
 <br>
 
