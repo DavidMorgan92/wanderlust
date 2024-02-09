@@ -145,7 +145,35 @@ Test run results:
 
 #### Home Contact Us link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/home-contact-us-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/home-contact-us-link-works/after.jpg)
+
+</details>
+
 #### Home Content Attribution modal works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/home-content-attribution-modal-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/home-content-attribution-modal-works/after.jpg)
+
+</details>
 
 <br>
 
@@ -621,3 +649,7 @@ Defect: The thumbnails do not scroll to the left by 100px as designed. Instead t
 ![Email received](documentation/testing/contact-us/email-message-successfully-sends/email-received.JPG)
 
 </details>
+
+<br>
+
+[↑ Back to top](#testing)
