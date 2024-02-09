@@ -204,5 +204,479 @@
                 }
             ]
         }
+    },
+    {
+        "id": 3,
+        "location": {
+            "city": "Málaga",
+            "country": "Spain",
+            "lat": 36.7211111,
+            "lng": -4.4134082,
+            "placeId": "ChIJeUp1zOn3cg0RgEnXHR8zWTQ"
+        },
+        "bagAllowance": 15,
+        "handBagAllowance": 5,
+        "atolProtected": true,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "London Heathrow (LHR)",
+                    "time": "2024-02-30T18:00Z"
+                },
+                "arrival": {
+                    "airport": "Málaga-Costa del Sol Airport (AGP)",
+                    "time": "2024-02-30T21:00Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "Málaga-Costa del Sol Airport (AGP)",
+                    "time": "2024-02-35T09:00Z"
+                },
+                "arrival": {
+                    "airport": "London Heathrow (LHR)",
+                    "time": "2024-02-35T12:00Z"
+                }
+            }
+        },
+        "price": 500,
+        "hotel": {
+            "name": "Málaga Hotel Elíseos",
+            "blurb": "Located in the heart of Málaga, the budget-friendly Igh Eliseos is just across the city’s famous bullring. This three-star hotel is within a 15-minute walk to the Malaga Amphitheatre and Malaga Cathedral. All 36 rooms are elegant, and each includes a balcony with views of the city. Moreover, each room is equipped with a flat-screen TV with premium channels, air conditioning, minibar, and a private bathroom with a hairdryer. Complimentary Wi-Fi access is available in the public areas of the hotel. Private parking is also offered. Moreover, guests may avail of currency exchange services and dry cleaning services from the 24-hour reception. Breakfast is served for an extra charge in a small café just a few steps from the hotel. There are also other bars and restaurants within walking distance. Igh Eliseos is just 800 metres from the Picasso Museum. Malagueta Plaza can be reached through a five-minute walk.",
+            "features": [
+                "Air conditioning",
+                "Private parking"
+            ],
+            "images": [
+                "malaga-hotel-eliseos/1.jpg",
+                "malaga-hotel-eliseos/2.jpg",
+                "malaga-hotel-eliseos/3.jpg",
+                "malaga-hotel-eliseos/4.jpg",
+                "malaga-hotel-eliseos/5.jpg",
+                "malaga-hotel-eliseos/6.jpg"
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "There is an outdoor pool with lounge chairs."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "location": {
+            "city": "Paris",
+            "country": "France",
+            "lat": 48.8470293,
+            "lng": 2.3013502,
+            "placeId": "ChIJH-R_1yJw5kcR5vQPk8C3W0Y"
+        },
+        "bagAllowance": 30,
+        "handBagAllowance": 15,
+        "atolProtected": true,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "London Stanstead (STN)",
+                    "time": "2024-02-27T15:00Z"
+                },
+                "arrival": {
+                    "airport": "Paris Charles de Gaulle (CDG)",
+                    "time": "2024-02-27T17:00Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "Paris Charles de Gaulle (CDG)",
+                    "time": "2024-02-37T18:00Z"
+                },
+                "arrival": {
+                    "airport": "London Heathrow (LHR)",
+                    "time": "2024-02-37T20:00Z"
+                }
+            }
+        },
+        "price": 425,
+        "hotel": {
+            "name": "ibis Paris Eiffel Tower Cambronne 15th",
+            "blurb": "Located in Paris near the Eiffel Tower, ibis Paris Tour Eiffel Cambronne 15th, now known as Place Gustave, is near Metro 6. Enhance your getaway with our Eiffel Tower view rooms. In a relaxed ambiance, discover our lavish location: Champagne bar, wine bar, neo-bistro with homemade products & \"Healthy Food\" coffee corner. For a great weekend, enjoy brunch every Sat./Sun morning!",
+            "features": [
+                "Air conditioning",
+                "Private parking",
+                "Meeting rooms",
+                "Wheelchair access",
+                "Pets welcome"
+            ],
+            "images": [
+                "ibis-paris-eiffel-tower-cambronne-15th/1.jpg",
+                "ibis-paris-eiffel-tower-cambronne-15th/2.jpg",
+                "ibis-paris-eiffel-tower-cambronne-15th/3.jpg",
+                "ibis-paris-eiffel-tower-cambronne-15th/4.jpg",
+                "ibis-paris-eiffel-tower-cambronne-15th/5.jpg",
+                "ibis-paris-eiffel-tower-cambronne-15th/6.jpg"
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Board Basis",
+                        "info": [
+                            {
+                                "title": "Bed and Breakfast"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Coffee Bar",
+                                "text": "A bar offering tea, coffee and snacks."
+                            },
+                            {
+                                "title": "Restaurant",
+                                "text": "A 5 star French restaurant with a relaxing atmosphere."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "location": {
+            "city": "Orlando",
+            "country": "United States of America",
+            "lat": 28.4578469,
+            "lng": -81.4631797,
+            "placeId": "ChIJ49PHLfp-54gROjhaaldRMSY"
+        },
+        "bagAllowance": 30,
+        "handBagAllowance": 15,
+        "atolProtected": true,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "Cardiff Airport (CWL)",
+                    "time": "2024-03-01T07:00Z"
+                },
+                "arrival": {
+                    "airport": "Orlando International Airport (MCO)",
+                    "time": "2024-03-01T13:00Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "Orlando International Airport (MCO)",
+                    "time": "2024-03-08T18:00Z"
+                },
+                "arrival": {
+                    "airport": "Cardiff Airport (CWL)",
+                    "time": "2024-03-08T01:00Z"
+                }
+            }
+        },
+        "price": 575,
+        "hotel": {
+            "name": "Best Western Orlando Gateway Hotel",
+            "blurb": "Located in Orlando, Florida, this hotel offers free shuttle transportation to SeaWorld, Universal Studios Orlando and more. It features on-site dining and rooms include a flat-screen TV. The property is 22 km from Walt Disney World The hotel boasts an outdoor heated pool and 2 hot tubs. Complimentary WiFi is provided for all guests.",
+            "features": [
+                "Non-smoking rooms",
+                "Family rooms",
+                "Tea/coffee maker in all rooms"
+            ],
+            "images": [
+                "best-western-orlando-gateway-hotel/1.jpg",
+                "best-western-orlando-gateway-hotel/2.jpg",
+                "best-western-orlando-gateway-hotel/3.jpg",
+                "best-western-orlando-gateway-hotel/4.jpg",
+                "best-western-orlando-gateway-hotel/5.jpg"
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Board Basis",
+                        "info": [
+                            {
+                                "title": "Bed and Breakfast"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Coffee Bar",
+                                "text": "A bar offering tea, coffee and snacks."
+                            },
+                            {
+                                "title": "Restaurant",
+                                "text": "A 5 star French restaurant with a relaxing atmosphere."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "A 200 square foot outdoor pool is available with lounge chairs."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                },
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "location": {
+            "city": "Rio de Janeiro",
+            "country": "Brazil",
+            "lat": -22.9643912,
+            "lng": -43.1783668,
+            "placeId": "ChIJEaVwwFXVmwARoPbOzC-mJdY"
+        },
+        "bagAllowance": 20,
+        "handBagAllowance": 10,
+        "atolProtected": true,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "Cardiff Airport (CWL)",
+                    "time": "2024-03-01T07:00Z"
+                },
+                "arrival": {
+                    "airport": "Orlando International Airport (MCO)",
+                    "time": "2024-03-01T13:00Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "Orlando International Airport (MCO)",
+                    "time": "2024-03-08T18:00Z"
+                },
+                "arrival": {
+                    "airport": "Cardiff Airport (CWL)",
+                    "time": "2024-03-09T01:00Z"
+                }
+            }
+        },
+        "price": 600,
+        "hotel": {
+            "name": "Best Western Orlando Gateway Hotel",
+            "blurb": "Located in Orlando, Florida, this hotel offers free shuttle transportation to SeaWorld, Universal Studios Orlando and more. It features on-site dining and rooms include a flat-screen TV. The property is 22 km from Walt Disney World The hotel boasts an outdoor heated pool and 2 hot tubs. Complimentary WiFi is provided for all guests.",
+            "features": [
+                "Non-smoking rooms",
+                "Family rooms",
+                "Tea/coffee maker in all rooms"
+            ],
+            "images": [
+                "best-western-orlando-gateway-hotel/1.jpg",
+                "best-western-orlando-gateway-hotel/2.jpg",
+                "best-western-orlando-gateway-hotel/3.jpg",
+                "best-western-orlando-gateway-hotel/4.jpg",
+                "best-western-orlando-gateway-hotel/5.jpg"
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Board Basis",
+                        "info": [
+                            {
+                                "title": "Bed and Breakfast"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Coffee Bar",
+                                "text": "A bar offering tea, coffee and snacks."
+                            },
+                            {
+                                "title": "Restaurant",
+                                "text": "A 5 star French restaurant with a relaxing atmosphere."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "A 200 square foot outdoor pool is available with lounge chairs."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                },
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "location": {
+            "city": "Tokyo",
+            "country": "Japan",
+            "lat": 35.6979509,
+            "lng": 139.7019298,
+            "placeId": "ChIJbWn2gSeNGGARSng8U4QIzqI"
+        },
+        "bagAllowance": 20,
+        "handBagAllowance": 10,
+        "atolProtected": true,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "Newcastle International Airport (NCL)",
+                    "time": "2024-03-15T07:00Z"
+                },
+                "arrival": {
+                    "airport": "Haneda Airport (HND)",
+                    "time": "2024-03-21T15:00Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "Haneda Airport (HND)",
+                    "time": "2024-03-21T18:00Z"
+                },
+                "arrival": {
+                    "airport": "Newcastle International Airport (NCL)",
+                    "time": "2024-03-02T03:00Z"
+                }
+            }
+        },
+        "price": 800,
+        "hotel": {
+            "name": "APA Hotel Higashi Shinjuku Kabukicho Tower",
+            "blurb": "Attractively located in Tokyo, APA Hotel Higashi Shinjuku Kabukicho Tower features a buffet breakfast and free WiFi. This 3-star hotel offers a 24-hour front desk and luggage storage space. Private parking is available on site.",
+            "features": [
+                "Non-smoking rooms",
+                "24-hour front desk",
+                "Air conditioning"
+            ],
+            "images": [
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/1.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/2.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/3.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/4.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/5.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/6.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/7.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/8.jpg",
+                "apa-hotel-higashi-shinjuku-kabukicho-tower/9.jpg"
+            ],
+            "facilities": {
+                "wifi": true,
+                "cards": [
+                    {
+                        "title": "Board Basis",
+                        "info": [
+                            {
+                                "title": "Bed and Breakfast"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Coffee Bar",
+                                "text": "A bar offering tea, coffee and snacks."
+                            },
+                            {
+                                "title": "Restaurant",
+                                "text": "A 5 star French restaurant with a relaxing atmosphere."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "A 200 square foot outdoor pool is available with lounge chairs."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                },
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
     }
 ]
