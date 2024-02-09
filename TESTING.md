@@ -7,6 +7,7 @@
   - [Home](#home)
   - [Package List](#package-list)
   - [Package Details](#package-details)
+  - [Contact Us](#contact-us)
 
 ## Automated testing
 
@@ -118,6 +119,20 @@ Test run results:
 
 #### London popular destinations link works
 
+<details>
+<summary>Before (invalid value entered)</summary>
+
+![Before](documentation/testing/home/london-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After (to input has lost focus)</summary>
+
+![After](documentation/testing/home/london-popular-destinations-link-works/after.jpg)
+
+</details>
+
 #### Malaga popular destinations link works
 
 #### Paris popular destinations link works
@@ -138,27 +153,152 @@ Test run results:
 
 ### Package List
 
-#### Search results are sorted by price high to low by default
+#### Search results are sorted by price low to high by default
 
-#### Search results can be sorted by high to low
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/search-results-are-sorted-by-price-low-to-high-by-default/evidence.jpg)
+
+</details>
+
+#### Search results can be sorted by price high to low
+
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/search-results-can-be-sorted-by-price-high-to-low/evidence.jpg)
+
+</details>
 
 #### Image gallery scrolling works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-list/image-gallery-scrolling-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After (left button clicked)</summary>
+
+![After (left button clicked)](documentation/testing/package-list/image-gallery-scrolling-works/after-left.jpg)
+
+</details>
+
+<details>
+<summary>After (right button clicked)</summary>
+
+![After (right button clicked)](documentation/testing/package-list/image-gallery-scrolling-works/after-right.jpg)
+
+</details>
+
 #### Holiday data is loaded correctly
+
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/holiday-data-is-loaded-correctly/evidence.jpg)
+
+</details>
+
+The number of rooms is not correctly loaded based on the number of guests stated in the search form.
+
+The number of nights and the leaving date of the holiday is not correctly loaded.
+
+This functionality has not been implemented yet due to time constraints.
 
 #### Hotel data is loaded correctly
 
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/hotel-data-is-loaded-correctly/evidence.jpg)
+
+</details>
+
 #### Flights data is loaded correctly
+
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/flights-data-is-loaded-correctly/evidence.jpg)
+
+</details>
 
 #### Price data is loaded correctly
 
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-list/price-data-is-loaded-correctly/evidence.jpg)
+
+</details>
+
 #### More info link works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-list/more-info-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-list/more-info-link-works/after.jpg)
+
+</details>
 
 #### Package List Contact Us link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-list/package-list-contact-us-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-list/package-list-contact-us-link-works/after.jpg)
+
+</details>
+
 #### Package List Content Attribution modal works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-list/package-list-content-attribution-modal-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-list/package-list-content-attribution-modal-works/after.jpg)
+
+</details>
+
 #### Package List Breadcrumb link to home page works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-list/package-list-breadcrumb-link-to-home-page-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-list/package-list-breadcrumb-link-to-home-page-works/after.jpg)
+
+</details>
 
 <br>
 
@@ -197,3 +337,17 @@ Test run results:
 <br>
 
 [↑ Back to top](#testing)
+
+### Contact Us
+
+#### Name input is required
+
+#### Email input is required
+
+#### Email input requires valid email input
+
+#### Message input is required
+
+#### Contact Us Content Attribution modal works
+
+#### Contact Us Breadcrumb link to home page works
