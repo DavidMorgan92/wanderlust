@@ -203,9 +203,9 @@ Test run results:
 
 </details>
 
-The number of rooms is not correctly loaded based on the number of guests stated in the search form.
+Defect: The number of rooms is not correctly loaded based on the number of guests stated in the search form.
 
-The number of nights and the leaving date of the holiday is not correctly loaded.
+Defect: The number of nights and the leaving date of the holiday is not correctly loaded.
 
 This functionality has not been implemented yet due to time constraints.
 
@@ -308,31 +308,222 @@ This functionality has not been implemented yet due to time constraints.
 
 #### Image gallery works on small screens
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/image-gallery-works-on-small-screens/before.jpg)
+
+</details>
+
+<details>
+<summary>After (left button clicked)</summary>
+
+![After (left button clicked)](documentation/testing/package-details/image-gallery-works-on-small-screens/after-left.jpg)
+
+</details>
+
+<details>
+<summary>After (right button clicked)</summary>
+
+![After (right button clicked)](documentation/testing/package-details/image-gallery-works-on-small-screens/after-right.jpg)
+
+</details>
+
 #### Image gallery works on medium screens
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/image-gallery-works-on-medium-screens/before.jpg)
+
+</details>
+
+<details>
+<summary>After (thumbnail clicked)</summary>
+
+![After (thumbnail clicked)](documentation/testing/package-details/image-gallery-works-on-medium-screens/after-thumbnail-click.jpg)
+
+</details>
+
+<details>
+<summary>After (scroll right button clicked)</summary>
+
+![After (scroll right button clicked)](documentation/testing/package-details/image-gallery-works-on-medium-screens/after-scroll-right.jpg)
+
+</details>
+
+<details>
+<summary>After (scroll left button clicked)</summary>
+
+![After (scroll left button clicked)](documentation/testing/package-details/image-gallery-works-on-medium-screens/after-scroll-left.jpg)
+
+Defect: The thumbnails do not scroll to the left by 100px as designed. Instead the thumbnails jump to the scroll position of zero.
+
+</details>
 
 #### Image gallery works on large screens
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/image-gallery-works-on-large-screens/before.jpg)
+
+</details>
+
+<details>
+<summary>After (thumbnail clicked)</summary>
+
+![After (thumbnail clicked)](documentation/testing/package-details/image-gallery-works-on-large-screens/after-thumbnail-click.jpg)
+
+</details>
+
 #### Book now link works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/book-now-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/book-now-link-works/after.jpg)
+
+</details>
 
 #### Hotel name, location, blurb and price are loaded correctly
 
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-details/hotel-name-location-blurb-and-price-are-loaded-correctly/evidence.jpg)
+
+</details>
+
 #### Facilities data is loaded correctly
+
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-details/facilities-data-is-loaded-correctly/evidence.jpg)
+
+</details>
 
 #### Rooms data is loaded correctly
 
+<details>
+<summary>Evidence</summary>
+
+![Evidence](documentation/testing/package-details/rooms-data-is-loaded-correctly/evidence.jpg)
+
+</details>
+
 #### Location data is loaded correctly
+
+<details>
+<summary>Location</summary>
+
+![Evidence](documentation/testing/package-details/location-data-is-loaded-correctly/evidence.jpg)
+
+</details>
 
 #### Package Details Contact Us link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/package-details-contact-us-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/package-details-contact-us-link-works/after.jpg)
+
+</details>
+
 #### Package Details Content Attribution modal works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/package-details-content-attribution-modal-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/package-details-content-attribution-modal-works/after.jpg)
+
+</details>
 
 #### Nearby restaurants links work
 
-#### Nearby attractions links works
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/nearby-restaurants-links-work/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/nearby-restaurants-links-work/after.jpg)
+
+</details>
+
+#### Nearby attractions links work
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/nearby-attractions-links-work/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/nearby-attractions-links-work/after.jpg)
+
+</details>
 
 #### Package Details Breadcrumb link to home page works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/package-details-breadcrumb-link-to-home-page-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/package-details-breadcrumb-link-to-home-page-works/after.jpg)
+
+</details>
+
 #### Package Details Breadcrumb link to package list page works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/package-details/package-details-breadcrumb-link-to-package-list-page-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/package-details/package-details-breadcrumb-link-to-package-list-page-works/after.jpg)
+
+</details>
 
 <br>
 
@@ -351,3 +542,5 @@ This functionality has not been implemented yet due to time constraints.
 #### Contact Us Content Attribution modal works
 
 #### Contact Us Breadcrumb link to home page works
+
+#### Email message successfully sends
