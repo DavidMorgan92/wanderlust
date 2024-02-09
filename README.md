@@ -335,7 +335,7 @@ The EmailJS API is used in [contact.js](assets/js/contact.js) to send input from
 
 ## Testing
 
-The project makes use of automated testing by using Jest. Run `npm test` to run the tests.
+Please see the testing documentation [here](TESTING.md).
 
 ## Deployment
 
