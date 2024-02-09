@@ -120,14 +120,14 @@ Test run results:
 #### London popular destinations link works
 
 <details>
-<summary>Before (invalid value entered)</summary>
+<summary>Before</summary>
 
 ![Before](documentation/testing/home/london-popular-destinations-link-works/before.jpg)
 
 </details>
 
 <details>
-<summary>After (to input has lost focus)</summary>
+<summary>After</summary>
 
 ![After](documentation/testing/home/london-popular-destinations-link-works/after.jpg)
 
@@ -135,13 +135,83 @@ Test run results:
 
 #### Malaga popular destinations link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/malaga-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/malaga-popular-destinations-link-works/after.jpg)
+
+</details>
+
 #### Paris popular destinations link works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/paris-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/paris-popular-destinations-link-works/after.jpg)
+
+</details>
 
 #### Orlando popular destinations link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/orlando-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/orlando-popular-destinations-link-works/after.jpg)
+
+</details>
+
 #### Rio de Janeiro popular destinations link works
 
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/rio-de-janeiro-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/rio-de-janeiro-popular-destinations-link-works/after.jpg)
+
+</details>
+
 #### Tokyo popular destinations link works
+
+<details>
+<summary>Before</summary>
+
+![Before](documentation/testing/home/tokyo-popular-destinations-link-works/before.jpg)
+
+</details>
+
+<details>
+<summary>After</summary>
+
+![After](documentation/testing/home/tokyo-popular-destinations-link-works/after.jpg)
+
+</details>
 
 #### Home Contact Us link works
 
