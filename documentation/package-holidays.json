@@ -67,11 +67,11 @@
                         "info": [
                             {
                                 "title": "Coffee Bar",
-                                "text": "lorem ipsum"
+                                "text": "A bar offering tea, coffee and snacks."
                             },
                             {
                                 "title": "Centro Restaurant",
-                                "text": "asdfasdf"
+                                "text": "A 5 star Italian restaurant with a relaxing atmosphere."
                             }
                         ]
                     },
@@ -79,7 +79,7 @@
                         "title": "Pool Areas",
                         "info": [
                             {
-                                "text": "asdfasdfasdf"
+                                "text": "A 100 square foot pool is available."
                             }
                         ]
                     },
@@ -87,15 +87,7 @@
                         "title": "Sports & Leisure",
                         "info": [
                             {
-                                "text": "asdfasdfasdf"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Other Facilities",
-                        "info": [
-                            {
-                                "text": "asdfasdfasdf"
+                                "text": "There is an on-site gym with treadmills, free weights and machines."
                             }
                         ]
                     }
@@ -106,6 +98,107 @@
                     "name": "Standard Double or Twin Room",
                     "sleeps": {
                         "max": 2,
+                        "min": 2
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "location": {
+            "city": "London",
+            "country": "United Kingdom",
+            "lat": 51.501,
+            "lng": -0.1194749,
+            "placeId": "ChIJGeIsmrgEdkgRlsvY9Maa0A0"
+        },
+        "bagAllowance": 30,
+        "handBagAllowance": 10,
+        "atolProtected": false,
+        "flights": {
+            "departing": {
+                "departure": {
+                    "airport": "Birmingham (BHX)",
+                    "time": "2024-02-20T10:15Z"
+                },
+                "arrival": {
+                    "airport": "London Heathrow (LHR)",
+                    "time": "2024-02-20T11:45Z"
+                }
+            },
+            "returning": {
+                "departure": {
+                    "airport": "London Heathrow (LHR)",
+                    "time": "2024-02-27T09:00Z"
+                },
+                "arrival": {
+                    "airport": "Birmingham (BHX)",
+                    "time": "2024-02-27T10:15Z"
+                }
+            }
+        },
+        "price": 349,
+        "hotel": {
+            "name": "Park Plaza Westminster Bridge London",
+            "blurb": "The hotel features the modern, award-winning Brasserie Joël and Ichi Sushi & Sashimi, which specialises in sushi and sashimi. The illy Caffè serves Italian coffee and pastries. Primo Bar offers live evening entertainment every night.",
+            "features": [
+                "Metro access",
+                "Private parking",
+                "Spa and wellness centre"
+            ],
+            "images": [
+                "park-plaza-westminster-bridge-london/1.jpg",
+                "park-plaza-westminster-bridge-london/2.jpg",
+                "park-plaza-westminster-bridge-london/3.jpg",
+                "park-plaza-westminster-bridge-london/4.jpg",
+                "park-plaza-westminster-bridge-london/5.jpg",
+                "park-plaza-westminster-bridge-london/6.jpg",
+                "park-plaza-westminster-bridge-london/7.jpg",
+                "park-plaza-westminster-bridge-london/8.jpg"
+            ],
+            "facilities": {
+                "wifi": false,
+                "cards": [
+                    {
+                        "title": "Restaurants & Bars",
+                        "info": [
+                            {
+                                "title": "Prime Bar",
+                                "text": "An on-site cocktail bar."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pool Areas",
+                        "info": [
+                            {
+                                "text": "There is an indoor pool with lounge chairs."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Sports & Leisure",
+                        "info": [
+                            {
+                                "text": "There is an on-site spa and wellness centre."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rooms": [
+                {
+                    "name": "Standard Double or Twin Room",
+                    "sleeps": {
+                        "max": 2,
+                        "min": 2
+                    }
+                },
+                {
+                    "name": "Luxury Suite",
+                    "sleeps": {
+                        "max": 3,
                         "min": 2
                     }
                 }
